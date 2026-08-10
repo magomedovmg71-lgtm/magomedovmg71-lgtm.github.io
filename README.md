@@ -88,7 +88,7 @@ grep -rn "magomedovmg71-lgtm.github.io/\"" index.html sitemap.xml robots.txt
 
 | # | Проект | Ссылка |
 |---|---|---|
-| 01 | VELAR DETAIL — детейлинг-студия | https://magomedovmg71-lgtm.github.io/velar-detail1/ |
+| 01 | VELAR DETAIL — детейлинг-студия | https://magomedovmg71-lgtm.github.io/velar-detail/ |
 | 02 | SHAFRAN — ресторан | https://magomedovmg71-lgtm.github.io/shafran/ |
 | 03 | ATLAS ARCHITECTS — архитектурное бюро | https://magomedovmg71-lgtm.github.io/atlas-architects/ · [код](https://github.com/magomedovmg71-lgtm/atlas-architects) |
 
