@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MAGA.DEV — Разработка современных сайтов для бизнеса</title>
+<meta name="description" content="MAGA.DEV — веб-разработка современных, быстрых и адаптивных сайтов для бизнеса. Три реальных проекта: детейлинг-студия, ресторан и архитектурное бюро.">
+<meta name="author" content="MAGA.DEV">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://magomedovmg71-lgtm.github.io/maga-dev/">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MAGA.DEV">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="MAGA.DEV — Разработка современных сайтов для бизнеса">
+<meta property="og:description" content="Создаю современные, быстрые и адаптивные сайты для бизнеса. Три реальных проекта: VELAR DETAIL, SHAFRAN, ATLAS ARCHITECTS.">
+<meta property="og:url" content="https://magomedovmg71-lgtm.github.io/maga-dev/">
+<meta property="og:image" content="https://magomedovmg71-lgtm.github.io/maga-dev/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MAGA.DEV — веб-разработка">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MAGA.DEV — Разработка современных сайтов для бизнеса">
+<meta name="twitter:description" content="Создаю современные, быстрые и адаптивные сайты для бизнеса.">
+<meta name="twitter:image" content="https://magomedovmg71-lgtm.github.io/maga-dev/images/og-image.jpg">
+
+<!-- Icons -->
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+<!-- Fonts: self-hosted Inter (latin + cyrillic subsets) -->
+<link rel="preload" href="fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://magomedovmg71-lgtm.github.io/maga-dev/#website",
+      "url": "https://magomedovmg71-lgtm.github.io/maga-dev/",
+      "name": "MAGA.DEV",
+      "description": "Веб-разработка современных сайтов для бизнеса",
+      "inLanguage": ["ru-RU", "en"],
+      "publisher": { "@id": "https://magomedovmg71-lgtm.github.io/maga-dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://magomedovmg71-lgtm.github.io/maga-dev/#person",
+      "name": "MAGA.DEV",
+      "jobTitle": "Веб-разработчик",
+      "email": "mailto:magomedovmg71@gmail.com",
+      "url": "https://magomedovmg71-lgtm.github.io/maga-dev/",
+      "knowsAbout": ["HTML5", "CSS3", "JavaScript", "Responsive Design", "UI Development", "Web Performance", "Accessibility", "SEO"]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Избранные работы",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "WebSite",
+            "name": "VELAR DETAIL",
+            "url": "https://magomedovmg71-lgtm.github.io/velar-detail1/",
+            "description": "Премиальный сайт детейлинг-студии с услугами, галереей работ, блоком Before / After и формой записи.",
+            "author": { "@id": "https://magomedovmg71-lgtm.github.io/maga-dev/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "WebSite",
+            "name": "SHAFRAN",
+            "url": "https://magomedovmg71-lgtm.github.io/shafran/",
+            "description": "Современный сайт ресторана с акцентом на атмосферу, меню, фотографии и бронирование.",
+            "author": { "@id": "https://magomedovmg71-lgtm.github.io/maga-dev/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "WebSite",
+            "name": "ATLAS ARCHITECTS",
+            "url": "https://magomedovmg71-lgtm.github.io/atlas-architects/",
+            "description": "Премиальный сайт архитектурного бюро, разработанный с нуля.",
+            "author": { "@id": "https://magomedovmg71-lgtm.github.io/maga-dev/#person" }
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Перейти к содержимому</a>
+
+<!-- Decorative editorial grid -->
+<div class="grid-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+
+<!-- ============================================================ HEADER -->
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <a class="wordmark" href="#top" data-i18n-aria="a11y.home" aria-label="MAGA.DEV — на главную">
+      <span class="wordmark__main">MAGA</span><span class="wordmark__accent">.DEV</span>
+    </a>
+
+    <nav class="nav" id="nav" data-i18n-aria="a11y.nav" aria-label="Основная навигация">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#work"><span class="nav__idx">01</span><span data-i18n="nav.work">Проекты</span></a></li>
+        <li><a class="nav__link" href="#about"><span class="nav__idx">02</span><span data-i18n="nav.about">О себе</span></a></li>
+        <li><a class="nav__link" href="#process"><span class="nav__idx">03</span><span data-i18n="nav.process">Процесс</span></a></li>
+        <li><a class="nav__link" href="#contact"><span class="nav__idx">04</span><span data-i18n="nav.contact">Контакты</span></a></li>
+      </ul>
+      <div class="nav__foot">
+        <a class="nav__mail" href="mailto:magomedovmg71@gmail.com">magomedovmg71@gmail.com</a>
+        <div class="nav__socials">
+          <a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+          <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="site-header__side">
+      <button class="lang" id="lang-toggle" type="button" data-i18n-aria="a11y.lang" aria-label="Switch to English">
+        <span class="lang__opt is-current">RU</span><span class="lang__sep" aria-hidden="true">/</span><span class="lang__opt">EN</span>
+      </button>
+
+      <a class="btn btn--ghost btn--sm site-header__cta" href="#contact" data-i18n="cta.talk">Обсудить проект</a>
+
+      <button class="burger" id="burger" type="button" data-i18n-aria="a11y.menuOpen" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+        <span class="burger__box" aria-hidden="true"><span class="burger__line"></span><span class="burger__line"></span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav-scrim" id="nav-scrim" hidden></div>
+
+<main id="main">
+  <span id="top" class="anchor" aria-hidden="true"></span>
+
+  <!-- ============================================================ HERO -->
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="container hero__inner">
+
+      <p class="hero__eyebrow" data-reveal>
+        <span class="status-dot" aria-hidden="true"></span>
+        <span data-i18n="hero.eyebrow">Веб-разработка — доступен для новых проектов</span>
+      </p>
+
+      <h1 class="hero__title" id="hero-title">
+        <span class="line" data-reveal="line" data-reveal-delay="1"><span class="line__in" data-i18n="hero.l1">Сайты, с которыми</span></span>
+        <span class="line" data-reveal="line" data-reveal-delay="2"><span class="line__in" data-i18n="hero.l2">бизнес выглядит</span></span>
+        <span class="line" data-reveal="line" data-reveal-delay="3"><span class="line__in" data-i18n="hero.l3"><em>дороже.</em></span></span>
+      </h1>
+
+      <div class="hero__bottom">
+        <p class="hero__lead" data-reveal data-reveal-delay="4" data-i18n="hero.lead">
+          Создаю современные, быстрые и адаптивные сайты для бизнеса.
+        </p>
+
+        <div class="hero__actions" data-reveal data-reveal-delay="5">
+          <a class="btn btn--solid" href="#work">
+            <span data-i18n="cta.viewProjects">Смотреть проекты</span> <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn--ghost" href="#contact" data-i18n="cta.talk">Обсудить проект</a>
+        </div>
+      </div>
+
+      <p class="hero__meta" data-reveal data-reveal-delay="6">
+        <span data-i18n="hero.m1">Веб-разработка</span><i aria-hidden="true">·</i><span data-i18n="hero.m2">Интерфейсы</span><i aria-hidden="true">·</i><span data-i18n="hero.m3">Скорость</span>
+      </p>
+
+      <div class="hero__rule" data-reveal data-reveal-delay="7">
+        <span class="hero__rule-item" data-i18n="hero.r1">03 — избранных проекта</span>
+        <span class="hero__rule-item">HTML · CSS · JavaScript</span>
+        <a class="hero__rule-item hero__scroll" href="#work">
+          <span data-i18n="hero.scroll">Листайте</span> <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ WORK -->
+  <section class="section work" id="work" aria-labelledby="work-title">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-index"><span>01</span> <span data-i18n="sec.work">Работы</span></p>
+        <h2 class="section-title" id="work-title" data-reveal data-i18n="work.title">Избранные работы</h2>
+        <p class="section-sub" data-reveal data-reveal-delay="1" data-i18n="work.sub">Три проекта, которые показывают мой подход к дизайну и разработке.</p>
+      </header>
+    </div>
+
+    <!-- -------------------------------------------------- 01 VELAR -->
+    <article class="project project--velar" aria-labelledby="p1-title">
+      <div class="container">
+        <div class="project__top">
+          <p class="project__num" aria-hidden="true">01</p>
+          <p class="project__cat" data-i18n="p1.cat">Автомобили / Детейлинг</p>
+        </div>
+      </div>
+
+      <div class="container container--wide">
+        <a class="media media--cinematic" href="https://magomedovmg71-lgtm.github.io/velar-detail1/"
+           target="_blank" rel="noopener noreferrer" data-reveal
+           data-i18n-aria="p1.open" aria-label="Открыть сайт VELAR DETAIL в новой вкладке">
+          <img src="images/velar-01.webp"
+               srcset="images/velar-01-800w.webp 800w, images/velar-01.webp 1440w, images/velar-01-2880w.webp 2880w"
+               sizes="(min-width: 1688px) 1560px, (min-width: 900px) calc(100vw - 128px), 100vw"
+               width="1440" height="900" loading="lazy" decoding="async"
+               data-i18n-alt="p1.alt1"
+               alt="Главный экран сайта VELAR DETAIL: тёмная страница детейлинг-студии с крупным заголовком и кнопкой записи">
+          <span class="media__overlay" aria-hidden="true">
+            <span class="media__label"><span data-i18n="cta.viewProject">Открыть проект</span> <i>→</i></span>
+          </span>
+        </a>
+      </div>
+
+      <div class="container">
+        <div class="project__body">
+          <div class="project__headline">
+            <h3 class="project__title" id="p1-title" data-reveal>VELAR DETAIL</h3>
+            <p class="project__desc" data-reveal data-reveal-delay="1" data-i18n="p1.desc">
+              Премиальный сайт детейлинг-студии с услугами, галереей работ, блоком Before&nbsp;/&nbsp;After и формой записи.
+            </p>
+          </div>
+
+          <div class="project__aside">
+            <dl class="facts">
+              <div class="facts__row"><dt data-i18n="fact.role">Роль</dt><dd data-i18n="fact.roleVal">Дизайн и разработка</dd></div>
+              <div class="facts__row"><dt data-i18n="fact.stack">Стек</dt><dd>HTML · CSS · JavaScript</dd></div>
+              <div class="facts__row"><dt data-i18n="fact.year">Год</dt><dd>2026</dd></div>
+            </dl>
+            <div class="project__actions">
+              <a class="btn btn--solid btn--sm" href="https://magomedovmg71-lgtm.github.io/velar-detail1/" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.live">Открыть сайт</span> <span aria-hidden="true">↗</span></a>
+              <button class="btn btn--ghost btn--sm" type="button" data-case="case-velar" data-i18n="cta.case">Смотреть кейс</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project__strip" data-reveal>
+          <figure class="strip__item">
+            <img src="images/velar-02.webp" srcset="images/velar-02-800w.webp 800w, images/velar-02.webp 1440w, images/velar-02-2880w.webp 2880w"
+                 sizes="(max-width: 800px) 100vw, 60vw" width="1440" height="900" loading="lazy" decoding="async"
+                 data-i18n-alt="p1.alt2"
+                 alt="Блок Before / After на сайте VELAR DETAIL с интерактивным слайдером сравнения фотографий">
+            <figcaption data-i18n="p1.cap1">Before / After — интерактивное сравнение</figcaption>
+          </figure>
+          <figure class="strip__item strip__item--phone">
+            <img src="images/velar-mobile.webp" srcset="images/velar-mobile.webp 420w, images/velar-mobile-840w.webp 840w" sizes="(max-width: 899px) 200px, 240px" width="390" height="844" loading="lazy" decoding="async"
+                 data-i18n-alt="p1.alt3"
+                 alt="Мобильная версия сайта VELAR DETAIL на экране смартфона">
+            <figcaption data-i18n="cap.mobile">Мобильная версия</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- -------------------------------------------------- 02 SHAFRAN -->
+    <article class="project project--shafran" aria-labelledby="p2-title">
+      <div class="container">
+        <div class="project__top">
+          <p class="project__num" aria-hidden="true">02</p>
+          <p class="project__cat" data-i18n="p2.cat">Ресторан / Гостеприимство</p>
+        </div>
+
+        <div class="split">
+          <div class="split__text">
+            <h3 class="project__title" id="p2-title" data-reveal>SHAFRAN</h3>
+            <p class="project__desc" data-reveal data-reveal-delay="1" data-i18n="p2.desc">
+              Современный сайт ресторана с акцентом на атмосферу, меню, фотографии и бронирование.
+            </p>
+            <dl class="facts" data-reveal data-reveal-delay="2">
+              <div class="facts__row"><dt data-i18n="fact.role">Роль</dt><dd data-i18n="fact.roleVal">Дизайн и разработка</dd></div>
+              <div class="facts__row"><dt data-i18n="fact.stack">Стек</dt><dd>HTML · CSS · JavaScript</dd></div>
+              <div class="facts__row"><dt data-i18n="fact.year">Год</dt><dd>2026</dd></div>
+            </dl>
+            <div class="project__actions" data-reveal data-reveal-delay="3">
+              <a class="btn btn--solid btn--sm" href="https://magomedovmg71-lgtm.github.io/shafran/" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.live">Открыть сайт</span> <span aria-hidden="true">↗</span></a>
+              <button class="btn btn--ghost btn--sm" type="button" data-case="case-shafran" data-i18n="cta.case">Смотреть кейс</button>
+            </div>
+          </div>
+
+          <div class="split__media">
+            <a class="media media--tall" href="https://magomedovmg71-lgtm.github.io/shafran/"
+               target="_blank" rel="noopener noreferrer" data-reveal
+               data-i18n-aria="p2.open" aria-label="Открыть сайт SHAFRAN в новой вкладке">
+              <img src="images/shafran-01.webp"
+                   srcset="images/shafran-01-800w.webp 800w, images/shafran-01.webp 1440w, images/shafran-01-2880w.webp 2880w"
+                   sizes="(max-width: 900px) 100vw, 55vw"
+                   width="1440" height="900" loading="lazy" decoding="async"
+                   data-i18n-alt="p2.alt1"
+                   alt="Главный экран сайта ресторана SHAFRAN с полноэкранной фотографией и заголовком">
+              <span class="media__overlay" aria-hidden="true">
+                <span class="media__label"><span data-i18n="cta.viewProject">Открыть проект</span> <i>→</i></span>
+              </span>
+            </a>
+            <figure class="split__inset" data-reveal data-reveal-delay="2">
+              <img src="images/shafran-mobile.webp" srcset="images/shafran-mobile.webp 420w, images/shafran-mobile-840w.webp 840w" sizes="(max-width: 899px) 200px, 240px" width="390" height="844" loading="lazy" decoding="async"
+                   data-i18n-alt="p2.alt3"
+                   alt="Мобильная версия сайта ресторана SHAFRAN на экране смартфона">
+            </figure>
+          </div>
+        </div>
+
+        <div class="duo" data-reveal>
+          <figure class="duo__item">
+            <img src="images/shafran-02.webp" srcset="images/shafran-02-800w.webp 800w, images/shafran-02.webp 1440w, images/shafran-02-2880w.webp 2880w"
+                 sizes="(max-width: 800px) 100vw, 45vw" width="1440" height="900" loading="lazy" decoding="async"
+                 data-i18n-alt="p2.alt2"
+                 alt="Раздел меню на сайте SHAFRAN с фотографиями блюд и ценами">
+            <figcaption data-i18n="p2.cap1">Меню с категориями</figcaption>
+          </figure>
+          <figure class="duo__item">
+            <img src="images/shafran-03.webp" srcset="images/shafran-03-800w.webp 800w, images/shafran-03.webp 1440w, images/shafran-03-2880w.webp 2880w"
+                 sizes="(max-width: 800px) 100vw, 45vw" width="1440" height="900" loading="lazy" decoding="async"
+                 data-i18n-alt="p2.alt4"
+                 alt="Галерея интерьера и блюд на сайте ресторана SHAFRAN">
+            <figcaption data-i18n="p2.cap2">Галерея</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- -------------------------------------------------- 03 ATLAS -->
+    <article class="project project--atlas" aria-labelledby="p3-title">
+      <div class="container">
+        <div class="project__top">
+          <p class="project__num" aria-hidden="true">03</p>
+          <p class="project__cat" data-i18n="p3.cat">Архитектура / Бюро</p>
+        </div>
+      </div>
+
+      <div class="container container--wide">
+        <a class="media media--editorial" href="https://magomedovmg71-lgtm.github.io/atlas-architects/"
+           target="_blank" rel="noopener noreferrer" data-reveal
+           data-i18n-aria="p3.open" aria-label="Открыть сайт ATLAS ARCHITECTS в новой вкладке">
+          <img src="images/atlas-01.webp"
+               srcset="images/atlas-01-800w.webp 800w, images/atlas-01.webp 1440w, images/atlas-01-2880w.webp 2880w"
+               sizes="(min-width: 1688px) 1560px, (min-width: 900px) calc(100vw - 128px), 100vw"
+               width="1440" height="900" loading="lazy" decoding="async"
+               data-i18n-alt="p3.alt1"
+               alt="Главный экран сайта ATLAS ARCHITECTS с крупной архитектурной фотографией и заголовком">
+          <span class="media__overlay" aria-hidden="true">
+            <span class="media__label"><span data-i18n="cta.viewProject">Открыть проект</span> <i>→</i></span>
+          </span>
+        </a>
+      </div>
+
+      <div class="container">
+        <div class="atlas-caption">
+          <h3 class="project__title" id="p3-title" data-reveal>ATLAS ARCHITECTS</h3>
+          <p class="project__desc" data-reveal data-reveal-delay="1" data-i18n="p3.desc">
+            Премиальный сайт архитектурного бюро, разработанный мной с нуля.
+          </p>
+        </div>
+
+        <figure class="compare-figure" data-reveal>
+          <img src="images/atlas-02.webp" srcset="images/atlas-02-800w.webp 800w, images/atlas-02.webp 1440w, images/atlas-02-2880w.webp 2880w"
+               sizes="(min-width: 1448px) 1320px, (min-width: 900px) calc(100vw - 128px), 100vw" width="1440" height="900" loading="lazy" decoding="async"
+               data-i18n-alt="p3.alt2"
+               alt="Слайдер сравнения на сайте ATLAS ARCHITECTS: слева архитектурный чертёж, справа построенное здание">
+          <figcaption>
+            <span class="compare-figure__l" data-i18n="p3.drawing">Чертёж</span>
+            <span class="compare-figure__arrow" aria-hidden="true">→</span>
+            <span class="compare-figure__r" data-i18n="p3.building">Постройка</span>
+          </figcaption>
+        </figure>
+
+        <div class="atlas-grid">
+          <dl class="facts facts--wide">
+            <div class="facts__row"><dt data-i18n="fact.role">Роль</dt><dd data-i18n="fact.roleVal">Дизайн и разработка</dd></div>
+            <div class="facts__row"><dt data-i18n="fact.stack">Стек</dt><dd>HTML · CSS · JavaScript</dd></div>
+            <div class="facts__row"><dt data-i18n="fact.langs">Языки</dt><dd>RU / EN</dd></div>
+            <div class="facts__row"><dt data-i18n="fact.year">Год</dt><dd>2026</dd></div>
+          </dl>
+          <div class="atlas-grid__actions">
+            <div class="project__actions">
+              <a class="btn btn--solid btn--sm" href="https://magomedovmg71-lgtm.github.io/atlas-architects/" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.live">Открыть сайт</span> <span aria-hidden="true">↗</span></a>
+              <a class="btn btn--ghost btn--sm" href="https://github.com/magomedovmg71-lgtm/atlas-architects" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.code">Смотреть код</span> <span aria-hidden="true">↗</span></a>
+              <button class="btn btn--ghost btn--sm" type="button" data-case="case-atlas" data-i18n="cta.case">Смотреть кейс</button>
+            </div>
+          </div>
+        </div>
+
+        <figure class="wide-figure" data-reveal>
+          <img src="images/atlas-03.webp" srcset="images/atlas-03-800w.webp 800w, images/atlas-03.webp 1440w, images/atlas-03-2880w.webp 2880w"
+               sizes="(min-width: 1448px) 1320px, (min-width: 900px) calc(100vw - 128px), 100vw" width="1440" height="900" loading="lazy" decoding="async"
+               data-i18n-alt="p3.alt3"
+               alt="Сетка проектов на сайте ATLAS ARCHITECTS с крупными архитектурными фотографиями">
+          <figcaption data-i18n="p3.cap1">Редакционная сетка проектов</figcaption>
+        </figure>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============================================================ ABOUT -->
+  <section class="section about" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-index"><span>02</span> <span data-i18n="sec.about">О себе</span></p>
+      </header>
+
+      <div class="about__grid">
+        <h2 class="about__title" id="about-title" data-reveal data-i18n="about.title">Делаю сайты,<br>а не шаблоны.</h2>
+        <div class="about__text">
+          <p data-reveal data-reveal-delay="1" data-i18n="about.p1">
+            Я создаю сайты, которые выглядят современно, быстро работают и одинаково хорошо выглядят
+            на компьютере, планшете и телефоне.
+          </p>
+          <p class="about__note" data-reveal data-reveal-delay="2" data-i18n="about.p2">
+            Каждый проект пишу вручную: без конструкторов и тяжёлых шаблонов.
+          </p>
+        </div>
+      </div>
+
+      <ul class="traits">
+        <li class="traits__item" data-reveal><span class="traits__idx">01</span><span class="traits__name" data-i18n="trait.1">Адаптивность</span></li>
+        <li class="traits__item" data-reveal data-reveal-delay="1"><span class="traits__idx">02</span><span class="traits__name" data-i18n="trait.2">Скорость</span></li>
+        <li class="traits__item" data-reveal data-reveal-delay="2"><span class="traits__idx">03</span><span class="traits__name" data-i18n="trait.3">SEO-готовность</span></li>
+        <li class="traits__item" data-reveal data-reveal-delay="3"><span class="traits__idx">04</span><span class="traits__name" data-i18n="trait.4">Современный UI</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================ CAPABILITIES -->
+  <section class="section capabilities" id="capabilities" aria-labelledby="cap-title">
+    <div class="container">
+      <header class="section-head section-head--inline">
+        <p class="section-index"><span>03</span> <span data-i18n="sec.stack">Стек</span></p>
+        <h2 class="section-title section-title--sm" id="cap-title" data-reveal data-i18n="cap.title">Возможности</h2>
+      </header>
+
+      <ul class="cap-list">
+        <li class="cap-list__item" data-reveal><span class="cap-list__idx">01</span><span class="cap-list__name">HTML5</span><span class="cap-list__tag" data-i18n="cap.t1">Семантическая вёрстка</span></li>
+        <li class="cap-list__item" data-reveal><span class="cap-list__idx">02</span><span class="cap-list__name">CSS3</span><span class="cap-list__tag" data-i18n="cap.t2">Grid · Flexbox · Анимации</span></li>
+        <li class="cap-list__item" data-reveal><span class="cap-list__idx">03</span><span class="cap-list__name">JavaScript</span><span class="cap-list__tag" data-i18n="cap.t3">Vanilla, без фреймворков</span></li>
+        <li class="cap-list__item" data-reveal><span class="cap-list__idx">04</span><span class="cap-list__name" data-i18n="cap.n4">Адаптивная вёрстка</span><span class="cap-list__tag">320 → 1440+</span></li>
+        <li class="cap-list__item" data-reveal><span class="cap-list__idx">05</span><span class="cap-list__name" data-i18n="cap.n5">Интерфейсы</span><span class="cap-list__tag" data-i18n="cap.t5">UI и композиция</span></li>
+        <li class="cap-list__item" data-reveal><span class="cap-list__idx">06</span><span class="cap-list__name">Git</span><span class="cap-list__tag" data-i18n="cap.t6">Версионирование</span></li>
+        <li class="cap-list__item" data-reveal><span class="cap-list__idx">07</span><span class="cap-list__name">GitHub</span><span class="cap-list__tag" data-i18n="cap.t7">Хостинг и публикация</span></li>
+        <li class="cap-list__item" data-reveal><span class="cap-list__idx">08</span><span class="cap-list__name">SEO</span><span class="cap-list__tag">Meta · OG · Schema.org</span></li>
+        <li class="cap-list__item" data-reveal><span class="cap-list__idx">09</span><span class="cap-list__name" data-i18n="cap.n9">Скорость</span><span class="cap-list__tag" data-i18n="cap.t9">Вес, изображения, шрифты</span></li>
+        <li class="cap-list__item" data-reveal><span class="cap-list__idx">10</span><span class="cap-list__name" data-i18n="cap.n10">Доступность</span><span class="cap-list__tag" data-i18n="cap.t10">Клавиатура · контраст · ARIA</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================ PROCESS -->
+  <section class="section process" id="process" aria-labelledby="process-title">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-index"><span>04</span> <span data-i18n="sec.process">Процесс</span></p>
+        <h2 class="section-title" id="process-title" data-reveal data-i18n="process.title">Как я работаю</h2>
+      </header>
+
+      <ol class="steps">
+        <li class="step" data-reveal>
+          <span class="step__num">01</span>
+          <div class="step__body">
+            <h3 class="step__title" data-i18n="step.1t">Обсуждение</h3>
+            <p class="step__text" data-i18n="step.1d">Понимаю задачу, бизнес и цели проекта.</p>
+          </div>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num">02</span>
+          <div class="step__body">
+            <h3 class="step__title" data-i18n="step.2t">Дизайн</h3>
+            <p class="step__text" data-i18n="step.2d">Продумываю структуру, композицию и визуальный стиль.</p>
+          </div>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num">03</span>
+          <div class="step__body">
+            <h3 class="step__title" data-i18n="step.3t">Разработка</h3>
+            <p class="step__text" data-i18n="step.3d">Создаю адаптивный сайт и интерактивные элементы.</p>
+          </div>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num">04</span>
+          <div class="step__body">
+            <h3 class="step__title" data-i18n="step.4t">Тестирование</h3>
+            <p class="step__text" data-i18n="step.4d">Проверяю мобильную версию, скорость, accessibility и корректность работы.</p>
+          </div>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num">05</span>
+          <div class="step__body">
+            <h3 class="step__title" data-i18n="step.5t">Запуск</h3>
+            <p class="step__text" data-i18n="step.5d">Подготавливаю сайт к публикации.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================================================ WHY -->
+  <section class="section why" id="why" aria-labelledby="why-title">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-index"><span>05</span> <span data-i18n="sec.why">Почему</span></p>
+        <h2 class="section-title" id="why-title" data-reveal data-i18n="why.title">Сделано для бизнеса.</h2>
+      </header>
+
+      <div class="why__grid">
+        <article class="why__item" data-reveal>
+          <p class="why__idx" aria-hidden="true">01</p>
+          <h3 class="why__name" data-i18n="why.n1">Современный дизайн</h3>
+          <p class="why__text" data-i18n="why.d1">Сайт выглядит актуально и профессионально.</p>
+        </article>
+        <article class="why__item" data-reveal data-reveal-delay="1">
+          <p class="why__idx" aria-hidden="true">02</p>
+          <h3 class="why__name" data-i18n="why.n2">Адаптивность</h3>
+          <p class="why__text" data-i18n="why.d2">Корректная работа на компьютере, планшете и телефоне.</p>
+        </article>
+        <article class="why__item" data-reveal data-reveal-delay="2">
+          <p class="why__idx" aria-hidden="true">03</p>
+          <h3 class="why__name" data-i18n="why.n3">Скорость</h3>
+          <p class="why__text" data-i18n="why.d3">Чистый код и внимание к скорости загрузки.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ CONTACT -->
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-index"><span>06</span> <span data-i18n="sec.contact">Контакты</span></p>
+      </header>
+
+      <div class="contact__hero">
+        <h2 class="contact__title" id="contact-title" data-reveal data-i18n="contact.title">Нужен сайт<br>для бизнеса?</h2>
+        <p class="contact__sub" data-reveal data-reveal-delay="1" data-i18n="contact.sub">
+          Расскажите о своей задаче — обсудим, какой сайт подойдёт вашему бизнесу.
+        </p>
+        <a class="btn btn--solid btn--lg" href="#contact-form" data-reveal data-reveal-delay="2">
+          <span data-i18n="cta.start">Начать проект</span> <span class="btn__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="contact__grid">
+        <div class="contact__side">
+          <p class="contact__label" data-i18n="contact.direct">Прямой контакт</p>
+          <ul class="contact__links">
+            <li><a href="mailto:magomedovmg71@gmail.com">magomedovmg71@gmail.com</a></li>
+            <li><a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram <span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://wa.me/" target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a></li>
+          </ul>
+          <p class="contact__note">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span data-i18n="contact.note">Отвечаю на письма, в Telegram и WhatsApp.</span>
+          </p>
+        </div>
+
+        <form class="form" id="contact-form" novalidate>
+          <p class="form__notice" role="note" data-i18n="form.notice">
+            <strong>Демо-форма</strong> — подключите backend, чтобы получать сообщения.
+            Сейчас форма ничего не отправляет: напишите на почту, в Telegram или WhatsApp.
+          </p>
+
+          <div class="field">
+            <label class="field__label" for="name" data-i18n="form.name">Имя</label>
+            <input class="field__input" type="text" id="name" name="name" autocomplete="name"
+                   required minlength="2" aria-describedby="name-error">
+            <p class="field__error" id="name-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="email" data-i18n="form.email">Email</label>
+            <input class="field__input" type="email" id="email" name="email" autocomplete="email"
+                   required aria-describedby="email-error">
+            <p class="field__error" id="email-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="message" data-i18n="form.message">Сообщение</label>
+            <textarea class="field__input field__input--area" id="message" name="message" rows="5"
+                      required minlength="10" aria-describedby="message-error"></textarea>
+            <p class="field__error" id="message-error" role="alert"></p>
+          </div>
+
+          <button class="btn btn--solid btn--block" type="submit">
+            <span data-i18n="form.send">Отправить сообщение</span> <span class="btn__arrow" aria-hidden="true">→</span>
+          </button>
+
+          <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================================================ FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <p class="wordmark wordmark--lg"><span class="wordmark__main">MAGA</span><span class="wordmark__accent">.DEV</span></p>
+        <p class="site-footer__tagline" data-i18n="footer.tagline">Веб-разработка и цифровые продукты.</p>
+      </div>
+
+      <nav class="site-footer__nav" data-i18n-aria="a11y.footerNav" aria-label="Навигация в подвале">
+        <div class="site-footer__col">
+          <p class="site-footer__label" data-i18n="footer.menu">Меню</p>
+          <ul>
+            <li><a href="#work" data-i18n="nav.work">Проекты</a></li>
+            <li><a href="#about" data-i18n="nav.about">О себе</a></li>
+            <li><a href="#process" data-i18n="nav.process">Процесс</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <p class="site-footer__label" data-i18n="footer.links">Ссылки</p>
+          <ul>
+            <li><a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram <span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://wa.me/" target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true">↗</span></a></li>
+            <li><a href="mailto:magomedovmg71@gmail.com" data-i18n="footer.email">Почта</a></li>
+            <li><a href="https://github.com/magomedovmg71-lgtm/atlas-architects" target="_blank" rel="noopener noreferrer" data-i18n="footer.code">Код Atlas <span aria-hidden="true">↗</span></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>&copy; <span id="year">2026</span> MAGA.DEV</p>
+      <p data-i18n="footer.by">Дизайн и разработка — MAGA.DEV</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================ CASE STUDIES -->
+<dialog class="case" id="case-velar" aria-labelledby="case-velar-title">
+  <div class="case__shell">
+    <button class="case__close" type="button" data-case-close data-i18n-aria="a11y.caseClose" aria-label="Закрыть кейс"><span aria-hidden="true">✕</span></button>
+    <div class="case__scroll" tabindex="-1">
+      <header class="case__head">
+        <p class="case__cat"><span data-i18n="p1.cat">Автомобили / Детейлинг</span> — 2026</p>
+        <h2 class="case__title" id="case-velar-title">VELAR DETAIL</h2>
+        <p class="case__lead" data-i18n="c1.lead">Премиальный сайт детейлинг-студии: услуги, цены, галерея работ, блок Before / After и форма записи.</p>
+        <div class="case__actions">
+          <a class="btn btn--solid btn--sm" href="https://magomedovmg71-lgtm.github.io/velar-detail1/" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.live">Открыть сайт</span> <span aria-hidden="true">↗</span></a>
+        </div>
+      </header>
+
+      <img class="case__hero" src="images/velar-01.webp" srcset="images/velar-01-800w.webp 800w, images/velar-01.webp 1440w, images/velar-01-2880w.webp 2880w"
+           sizes="(min-width: 900px) 830px, 100vw" width="1440" height="900" loading="lazy" decoding="async"
+           data-i18n-alt="p1.alt1" alt="Главный экран сайта VELAR DETAIL">
+
+      <div class="case__section">
+        <p class="case__num">01</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h1">Проект</h3>
+          <p data-i18n="c1.s1">Одностраничный сайт детейлинг-студии. Задача — показать уровень услуг и довести посетителя до записи. Тёмная «автомобильная» подача, тёплый золотой акцент, крупная типографика.</p>
+        </div>
+      </div>
+
+      <div class="case__section">
+        <p class="case__num">02</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h2">Задача</h3>
+          <p data-i18n="c1.s2">Детейлинг продают результатом, а результат трудно объяснить текстом. Нужно было построить страницу так, чтобы посетитель сначала увидел разницу «до / после», а потом дошёл до формы записи.</p>
+        </div>
+      </div>
+
+      <div class="case__section">
+        <p class="case__num">03</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h3">Подход</h3>
+          <p data-i18n="c1.s3">Чёткая последовательность экранов: услуги → цены → работы → запись. Каждый блок заканчивается понятным следующим шагом. Тёмная палитра держит внимание на фотографиях автомобилей.</p>
+        </div>
+      </div>
+
+      <img class="case__shot" src="images/velar-02.webp" srcset="images/velar-02-800w.webp 800w, images/velar-02.webp 1440w, images/velar-02-2880w.webp 2880w"
+           sizes="(min-width: 900px) 830px, 100vw" width="1440" height="900" loading="lazy" decoding="async"
+           data-i18n-alt="p1.alt2" alt="Блок Before / After с интерактивным слайдером на сайте VELAR DETAIL">
+
+      <div class="case__section">
+        <p class="case__num">04</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h4">Возможности</h3>
+          <ul class="case__list" data-i18n="c1.feat">
+            <li>Интерактивный слайдер Before / After</li>
+            <li>Блок услуг и прозрачный прайс</li>
+            <li>Форма записи с валидацией</li>
+            <li>Мобильное меню и адаптив от 320px</li>
+          </ul>
+        </div>
+      </div>
+
+      <img class="case__shot" src="images/velar-03.webp" srcset="images/velar-03-800w.webp 800w, images/velar-03.webp 1440w, images/velar-03-2880w.webp 2880w"
+           sizes="(min-width: 900px) 830px, 100vw" width="1440" height="900" loading="lazy" decoding="async"
+           data-i18n-alt="p1.alt4" alt="Раздел услуг на сайте VELAR DETAIL с карточками услуг и переходом к прайсу">
+
+      <div class="case__section">
+        <p class="case__num">05</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h5">Технологии</h3>
+          <ul class="chips">
+            <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>CSS Grid</li><li>Flexbox</li><li>GitHub Pages</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="case__section">
+        <p class="case__num">06</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h6">Результат</h3>
+          <p data-i18n="c1.s6">Готовый сайт опубликован на GitHub Pages и доступен по прямой ссылке. Открывается на десктопе и мобильном, все интерактивные элементы работают без сторонних библиотек.</p>
+          <div class="case__actions">
+            <a class="btn btn--solid btn--sm" href="https://magomedovmg71-lgtm.github.io/velar-detail1/" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.live">Открыть сайт</span> <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case" id="case-shafran" aria-labelledby="case-shafran-title">
+  <div class="case__shell">
+    <button class="case__close" type="button" data-case-close data-i18n-aria="a11y.caseClose" aria-label="Закрыть кейс"><span aria-hidden="true">✕</span></button>
+    <div class="case__scroll" tabindex="-1">
+      <header class="case__head">
+        <p class="case__cat"><span data-i18n="p2.cat">Ресторан / Гостеприимство</span> — 2026</p>
+        <h2 class="case__title" id="case-shafran-title">SHAFRAN</h2>
+        <p class="case__lead" data-i18n="c2.lead">Современный сайт ресторана с акцентом на атмосферу, меню, фотографии и бронирование.</p>
+        <div class="case__actions">
+          <a class="btn btn--solid btn--sm" href="https://magomedovmg71-lgtm.github.io/shafran/" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.live">Открыть сайт</span> <span aria-hidden="true">↗</span></a>
+        </div>
+      </header>
+
+      <img class="case__hero" src="images/shafran-01.webp" srcset="images/shafran-01-800w.webp 800w, images/shafran-01.webp 1440w, images/shafran-01-2880w.webp 2880w"
+           sizes="(min-width: 900px) 830px, 100vw" width="1440" height="900" loading="lazy" decoding="async"
+           data-i18n-alt="p2.alt1" alt="Главный экран сайта ресторана SHAFRAN">
+
+      <div class="case__section">
+        <p class="case__num">01</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h1">Проект</h3>
+          <p data-i18n="c2.s1">Сайт ресторана восточной кухни. Полноэкранная фотография, тёплая тёмная палитра, разделы «О ресторане», «Меню», «Галерея», «Бронирование» и «Контакты».</p>
+        </div>
+      </div>
+
+      <div class="case__section">
+        <p class="case__num">02</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h2">Задача</h3>
+          <p data-i18n="c2.s2">У сайта ресторана два разных посетителя: один хочет понять, что это за место, второй — быстро забронировать столик. Нужно было решить обе задачи, не потеряв атмосферу.</p>
+        </div>
+      </div>
+
+      <div class="case__section">
+        <p class="case__num">03</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h3">Подход</h3>
+          <p data-i18n="c2.s3">Атмосферу держат крупные фотографии и спокойная типографика, а действие — кнопка бронирования, доступная из шапки на любом экране. Меню разбито по категориям, чтобы его было удобно листать с телефона.</p>
+        </div>
+      </div>
+
+      <img class="case__shot" src="images/shafran-02.webp" srcset="images/shafran-02-800w.webp 800w, images/shafran-02.webp 1440w, images/shafran-02-2880w.webp 2880w"
+           sizes="(min-width: 900px) 830px, 100vw" width="1440" height="900" loading="lazy" decoding="async"
+           data-i18n-alt="p2.alt2" alt="Раздел меню на сайте SHAFRAN">
+
+      <div class="case__section">
+        <p class="case__num">04</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h4">Возможности</h3>
+          <ul class="case__list" data-i18n="c2.feat">
+            <li>Меню с категориями и фотографиями блюд</li>
+            <li>Галерея интерьера и подачи</li>
+            <li>Форма бронирования с валидацией</li>
+            <li>Липкая навигация и мобильное меню</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="case__section">
+        <p class="case__num">05</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h5">Технологии</h3>
+          <ul class="chips" data-i18n="c2.tech">
+            <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>WebP + srcset</li><li>Локальные variable-шрифты</li><li>GitHub Pages</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="case__section">
+        <p class="case__num">06</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h6">Результат</h3>
+          <p data-i18n="c2.s6">Сайт опубликован на GitHub Pages. Изображения отдаются в WebP в нескольких размерах, шрифты подключены локально подмножествами latin + cyrillic — страница остаётся лёгкой даже при большом количестве фотографий.</p>
+          <div class="case__actions">
+            <a class="btn btn--solid btn--sm" href="https://magomedovmg71-lgtm.github.io/shafran/" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.live">Открыть сайт</span> <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case" id="case-atlas" aria-labelledby="case-atlas-title">
+  <div class="case__shell">
+    <button class="case__close" type="button" data-case-close data-i18n-aria="a11y.caseClose" aria-label="Закрыть кейс"><span aria-hidden="true">✕</span></button>
+    <div class="case__scroll" tabindex="-1">
+      <header class="case__head">
+        <p class="case__cat"><span data-i18n="p3.cat">Архитектура / Бюро</span> — 2026</p>
+        <h2 class="case__title" id="case-atlas-title">ATLAS ARCHITECTS</h2>
+        <p class="case__lead" data-i18n="c3.lead">Премиальный сайт архитектурного бюро, разработанный мной с нуля.</p>
+        <div class="case__actions">
+          <a class="btn btn--solid btn--sm" href="https://magomedovmg71-lgtm.github.io/atlas-architects/" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.live">Открыть сайт</span> <span aria-hidden="true">↗</span></a>
+          <a class="btn btn--ghost btn--sm" href="https://github.com/magomedovmg71-lgtm/atlas-architects" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.code">Смотреть код</span> <span aria-hidden="true">↗</span></a>
+        </div>
+      </header>
+
+      <img class="case__hero" src="images/atlas-01.webp" srcset="images/atlas-01-800w.webp 800w, images/atlas-01.webp 1440w, images/atlas-01-2880w.webp 2880w"
+           sizes="(min-width: 900px) 830px, 100vw" width="1440" height="900" loading="lazy" decoding="async"
+           data-i18n-alt="p3.alt1" alt="Главный экран сайта ATLAS ARCHITECTS">
+
+      <div class="case__section">
+        <p class="case__num">01</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h1">Проект</h3>
+          <p data-i18n="c3.s1">Сайт архитектурного бюро — лонгрид с разделами о бюро, проектами, услугами, процессом и командой. Двуязычный интерфейс RU / EN, монохромная палитра, строгая сетка.</p>
+        </div>
+      </div>
+
+      <div class="case__section">
+        <p class="case__num">02</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h2">Задача</h3>
+          <p data-i18n="c3.s2">Архитектуру продаёт изображение, а не текст. Интерфейс не должен спорить с фотографиями — но при этом обязан удерживать структуру длинной страницы и работать на двух языках.</p>
+        </div>
+      </div>
+
+      <div class="case__section">
+        <p class="case__num">03</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h3">Подход</h3>
+          <p data-i18n="c3.s3">Редакционная сетка, много воздуха, сдержанная анимация. Центральная идея — слайдер «Чертёж → Постройка»: посетитель сам переводит проект из чертежа в готовое здание.</p>
+        </div>
+      </div>
+
+      <img class="case__shot" src="images/atlas-02.webp" srcset="images/atlas-02-800w.webp 800w, images/atlas-02.webp 1440w, images/atlas-02-2880w.webp 2880w"
+           sizes="(min-width: 900px) 830px, 100vw" width="1440" height="900" loading="lazy" decoding="async"
+           data-i18n-alt="p3.alt2" alt="Слайдер «Чертёж → Постройка» на сайте ATLAS ARCHITECTS">
+
+      <div class="case__section">
+        <p class="case__num">04</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h4">Возможности</h3>
+          <ul class="case__list" data-i18n="c3.feat">
+            <li>Двуязычный интерфейс RU / EN</li>
+            <li>Слайдер «Чертёж → Постройка»</li>
+            <li>Анимированная статистика</li>
+            <li>FAQ-аккордеон с корректной клавиатурной работой</li>
+          </ul>
+          <details class="case__more">
+            <summary data-i18n="c3.moreLabel">Полный список технических особенностей</summary>
+            <ul class="case__list" data-i18n="c3.more">
+              <li>Адаптивная вёрстка и мобильная навигация</li>
+              <li>Плавная прокрутка и навигация с клавиатуры</li>
+              <li>Поддержка prefers-reduced-motion</li>
+              <li>Accessibility: aria-атрибуты, состояния фокуса, контраст</li>
+              <li>SEO: мета-теги, Open Graph, Schema.org</li>
+              <li>sitemap.xml и robots.txt</li>
+              <li>Оптимизация изображений под разные экраны</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+
+      <div class="case__section">
+        <p class="case__num">05</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h5">Технологии</h3>
+          <ul class="chips">
+            <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>i18n (RU / EN)</li><li>Schema.org</li><li>Open Graph</li><li>Netlify</li><li>GitHub</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="case__section">
+        <p class="case__num">06</p>
+        <div class="case__content">
+          <h3 data-i18n="case.h6">Результат</h3>
+          <p data-i18n="c3.s6">Сайт опубликован, исходный код открыт на GitHub. Самый редакционный и самый технически насыщенный из трёх проектов: двуязычность, интерактивный слайдер и полный набор SEO- и accessibility-настроек.</p>
+          <div class="case__actions">
+            <a class="btn btn--solid btn--sm" href="https://magomedovmg71-lgtm.github.io/atlas-architects/" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.live">Открыть сайт</span> <span aria-hidden="true">↗</span></a>
+            <a class="btn btn--ghost btn--sm" href="https://github.com/magomedovmg71-lgtm/atlas-architects" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.code">Смотреть код</span> <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script src="js/i18n.js" defer></script>
+<script src="js/script.js" defer></script>
+</body>
+</html>
