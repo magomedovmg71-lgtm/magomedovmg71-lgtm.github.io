@@ -260,7 +260,7 @@ p { text-wrap: pretty; }
   text-transform: uppercase;
 }
 
-.section-index span { color: var(--accent); }
+.section-index__num { color: var(--accent); }
 
 .section-index::after {
   content: '';
@@ -284,6 +284,24 @@ p { text-wrap: pretty; }
   color: var(--text-dim);
   font-size: var(--fs-lead);
   line-height: 1.5;
+}
+
+/* На широком экране подзаголовок уходит вправо от заголовка: иначе правая
+   половина остаётся пустой и секция выглядит недовёрстанной. */
+@media (min-width: 900px) {
+  .section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    column-gap: clamp(2rem, 5vw, 5rem);
+    align-items: end;
+  }
+
+  .section-head .section-index { grid-column: 1 / -1; }
+
+  .section-head .section-sub {
+    margin-top: 0;
+    padding-bottom: 0.4rem;
+  }
 }
 
 .section-head--inline {
@@ -978,7 +996,6 @@ p { text-wrap: pretty; }
 
 .strip__item img,
 .duo__item img,
-.wide-figure img,
 .compare-figure img {
   width: 100%;
   border-radius: var(--r-md);
@@ -987,8 +1004,7 @@ p { text-wrap: pretty; }
 }
 
 .strip__item figcaption,
-.duo__item figcaption,
-.wide-figure figcaption {
+.duo__item figcaption {
   margin-top: 0.9rem;
   color: var(--text-faint);
   font-size: var(--fs-xs);
@@ -1082,8 +1098,6 @@ p { text-wrap: pretty; }
 
 .facts--wide { margin-bottom: 0; }
 
-.wide-figure { margin-top: clamp(2.5rem, 5vw, 4.5rem); }
-
 /* ==========================================================================
    9. ABOUT
    ========================================================================== */
@@ -1149,6 +1163,14 @@ p { text-wrap: pretty; }
   font-size: var(--fs-h4);
   font-weight: 500;
   letter-spacing: -0.02em;
+}
+
+.traits__text {
+  margin-top: 0.15rem;
+  max-width: 30ch;
+  color: var(--text-dim);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
 }
 
 /* ==========================================================================
@@ -1249,6 +1271,20 @@ p { text-wrap: pretty; }
   font-size: var(--fs-body);
 }
 
+/* Шаг разворачивается на всю ширину: номер, название и описание встают
+   в три колонки. `display: contents` растворяет обёртку, чтобы её дети
+   попали прямо в сетку строки — вложенности в разметке при этом не прибавилось. */
+@media (min-width: 900px) {
+  .step {
+    grid-template-columns: clamp(4rem, 7vw, 7.5rem) minmax(0, 0.75fr) minmax(0, 1.4fr);
+    align-items: baseline;
+  }
+
+  .step__body { display: contents; }
+
+  .step__text { max-width: 54ch; }
+}
+
 /* ==========================================================================
    12. WHY
    ========================================================================== */
@@ -1315,6 +1351,37 @@ p { text-wrap: pretty; }
 }
 
 .contact__hero .btn { margin-top: clamp(1.75rem, 3.5vw, 2.5rem); }
+
+/* Заголовок слева, текст с кнопкой справа — призыв к действию оказывается
+   на одной высоте с вопросом, а не под ним в пустоте. */
+@media (min-width: 900px) {
+  .contact__hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    /* Верхняя строка тянется, нижняя обжимает кнопку — иначе высокий
+       заголовок растащил бы строки и между текстом и кнопкой зияла дыра. */
+    grid-template-rows: 1fr auto;
+    column-gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: end;
+  }
+
+  .contact__hero .contact__title {
+    grid-row: 1 / span 2;
+    align-self: end;
+  }
+
+  .contact__hero .contact__sub {
+    grid-column: 2;
+    align-self: end;
+    margin-top: 0;
+  }
+
+  .contact__hero .btn {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
+  }
+}
 
 .contact__grid {
   display: grid;
@@ -1830,12 +1897,30 @@ p { text-wrap: pretty; }
     gap: 1.75rem;
   }
 
-  .strip__item--phone img { max-width: 200px; }
+  /* На телефоне десктопный скриншот сжимается вчетверо и текст внутри
+     перестаёт читаться. Мобильный макет ставим первым и во всю ширину —
+     он показывается почти один к одному и остаётся разборчивым. */
+  .strip__item--phone {
+    order: -1;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  .strip__item--phone img { max-width: 100%; }
+
+  .strip__item--phone figcaption { text-align: left; }
+
+  /* На десктопе это маленькая врезка поверх снимка. На телефоне она
+     превращалась в 110 пикселей нечитаемой ряби — поднимаем её наверх
+     и растягиваем, как и у остальных проектов. */
+  .split__media { display: flex; flex-direction: column; }
 
   .split__inset {
     position: static;
-    width: clamp(110px, 26vw, 150px);
-    margin-top: 1.25rem;
+    order: -1;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 1.5rem;
     box-shadow: none;
   }
 
@@ -1849,6 +1934,23 @@ p { text-wrap: pretty; }
   .why__grid { grid-template-columns: minmax(0, 1fr); }
 
   .case__shell { width: 100%; border-left: 0; }
+
+  /* Пальцем в строку высотой 23px не попасть. Поднимаем область нажатия
+     до 44px — минимум, на который ориентируются iOS и Android. */
+  .wordmark,
+  .lang,
+  .hero__scroll,
+  .nav__mail,
+  .nav__socials a,
+  .site-footer__col a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  /* Ссылки подвала стали выше — собственный отступ списка больше не нужен,
+     иначе колонки растянутся вдвое. */
+  .site-footer__col ul { gap: 0; }
 }
 
 @media (max-width: 640px) {

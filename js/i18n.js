@@ -108,6 +108,7 @@ window.MagaI18n = (function () {
     'p3.alt1': 'ATLAS ARCHITECTS homepage with a large architectural photograph and headline',
     'p3.alt2': 'Comparison slider on the ATLAS ARCHITECTS website: an architectural drawing on the left, the finished building on the right',
     'p3.alt3': 'Project grid on the ATLAS ARCHITECTS website with large architectural photography',
+    'p3.alt4': 'Mobile version of the ATLAS ARCHITECTS website on a smartphone screen',
 
     /* About */
     'about.title': 'Building websites,<br>not templates.',
@@ -212,6 +213,7 @@ window.MagaI18n = (function () {
 
     /* Runtime strings */
     'meta.title': 'MAGA.DEV — Modern websites for business',
+    'meta.description': 'MAGA.DEV — modern, fast and responsive websites for business. Three real projects: a detailing studio, a restaurant and an architecture practice.',
     'a11y.menuOpen': 'Open menu',
     'a11y.menuClose': 'Close menu',
     'a11y.lang': 'Переключить на русский',
@@ -219,6 +221,10 @@ window.MagaI18n = (function () {
     'err.nameShort': 'Your name needs at least 2 characters.',
     'err.emailRequired': 'Add an email so I can reply.',
     'err.emailInvalid': 'Check the email format — for example name@example.com',
+    'trait.1d': 'Looks right on a phone, a tablet and a wide monitor alike.',
+    'trait.2d': 'Compressed images, self-hosted fonts, not a single extra library.',
+    'trait.3d': 'Semantic markup, meta tags and Schema.org from day one.',
+    'trait.4d': 'Considered typography and composition instead of a ready-made template.',
     'err.phoneRequired': 'Add a phone number so I can call back.',
     'err.phoneInvalid': 'Check the number — for example +7 900 000-00-00',
     'err.messageRequired': 'Describe the task in a couple of words.',
@@ -237,6 +243,7 @@ window.MagaI18n = (function () {
   /* Runtime strings that are not present anywhere in the markup. */
   var RU = {
     'meta.title': 'MAGA.DEV — Разработка современных сайтов для бизнеса',
+    'meta.description': 'MAGA.DEV — веб-разработка современных, быстрых и адаптивных сайтов для бизнеса. Три реальных проекта: детейлинг-студия, ресторан и архитектурное бюро.',
     'a11y.menuOpen': 'Открыть меню',
     'a11y.menuClose': 'Закрыть меню',
     'a11y.lang': 'Switch to English',
@@ -321,6 +328,11 @@ window.MagaI18n = (function () {
 
     document.documentElement.lang = lang;
     document.title = t('meta.title');
+
+    // Описание страницы тоже переключаем: его читают при отправке ссылки
+    // в мессенджер и голосовые помощники.
+    var description = document.querySelector('meta[name="description"]');
+    if (description) description.setAttribute('content', t('meta.description'));
 
     var toggle = document.getElementById('lang-toggle');
     if (toggle) {

@@ -20,6 +20,9 @@
 │   └── script.js       — поведение (меню, кейсы, форма, анимации)
 ├── fonts/              — Inter (woff2, подмножества latin + cyrillic)
 ├── images/             — скриншоты проектов, favicon, OG-изображение
+├── worker/             — Cloudflare Worker, принимающий заявки с формы
+├── robots.txt
+├── sitemap.xml
 └── README.md
 ```
 
@@ -133,6 +136,18 @@ npx wrangler tail                       # смотреть логи вживую
 
 **При переезде на свой домен** добавьте его в `ALLOWED_ORIGINS` в `worker/index.js`
 и заново выполните `npx wrangler deploy`, иначе форма начнёт отвечать «Запрос с чужого адреса».
+
+## SEO
+
+`title`, `description`, `canonical`, Open Graph, Twitter Card, `robots` с
+`max-image-preview:large`, Schema.org (`WebSite`, `Person` с услугой и телефоном,
+`ItemList` из трёх проектов). При переключении языка меняются `lang`, `title`
+и `description`.
+
+⚠️ **Про `robots.txt`.** Поисковики читают его только из корня домена —
+`magomedovmg71-lgtm.github.io/robots.txt`. Пока сайт лежит в подпапке `/maga-dev/`,
+этот файл не работает: он заработает сам, когда появится свой домен. `sitemap.xml`
+при этом можно добавить в Google Search Console вручную, указав полный адрес.
 
 ## Что реализовано
 
