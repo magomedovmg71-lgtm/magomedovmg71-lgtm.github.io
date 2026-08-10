@@ -203,7 +203,16 @@
       });
     }, { rootMargin: '0px 0px -40px 0px', threshold: 0 });
 
-    items.forEach(function (item) { observer.observe(item); });
+    items.forEach(function (item) {
+      // Браузер восстанавливает позицию прокрутки при перезагрузке, а переход
+      // по якорю сразу бросает вниз страницы. Всё, что осталось выше экрана,
+      // показываем без анимации: иначе оно всплывало бы при возврате наверх.
+      if (item.getBoundingClientRect().bottom < 0) {
+        item.classList.add('is-visible');
+        return;
+      }
+      observer.observe(item);
+    });
   }
 
   /* ---------------------------------------------------------- hero pointer */
