@@ -21,6 +21,7 @@
 ├── fonts/              — Inter (woff2, подмножества latin + cyrillic)
 ├── images/             — скриншоты проектов, favicon, OG-изображение
 ├── worker/             — Cloudflare Worker, принимающий заявки с формы
+├── robots.txt
 ├── sitemap.xml
 └── README.md
 ```
@@ -57,25 +58,29 @@ npx http-server -p 8080 -c-1
 Telegram открывается по номеру. Если появится короткий ник (`@nickname`) — заменить
 ссылку на `https://t.me/nickname`, так солиднее выглядит в адресной строке.
 
-## Что стоит заменить при переезде на свой домен
+## Где опубликовано
 
-`index.html` — `canonical`, `og:url`, `og:image`, `twitter:image` и три `@id` в JSON-LD
-сейчас указывают на `https://magomedovmg71-lgtm.github.io/maga-dev/`.
+Репозиторий `magomedovmg71-lgtm/magomedovmg71-lgtm.github.io`, ветка `main`.
+Имя репозитория совпадает с именем пользователя, поэтому GitHub отдаёт сайт
+по короткому адресу **https://magomedovmg71-lgtm.github.io/** — без подпапки.
+
+### При переезде на свой домен
+
+1. `index.html` — заменить адрес в `canonical`, `og:url`, `og:image`, `twitter:image`
+   и трёх `@id` в JSON-LD
+2. `sitemap.xml` и `robots.txt` — заменить адрес
+3. `worker/index.js` — добавить домен в `ALLOWED_ORIGINS`, затем `npx wrangler deploy`
 
 Найти все места разом:
 
 ```bash
-grep -n "maga-dev" index.html
+grep -rn "magomedovmg71-lgtm.github.io/\"" index.html sitemap.xml robots.txt
 ```
 
 **Про Atlas Architects.** Раньше проект жил на Netlify, но та ссылка была приватной
 и просила войти в аккаунт. Сейчас сайт опубликован на GitHub Pages из ветки `master`
 репозитория `atlas-architects` и открывается по адресу
 `https://magomedovmg71-lgtm.github.io/atlas-architects/` — именно он стоит в портфолио.
-
-В репозитории Atlas остался workflow «Публикация сайта на GitHub Pages», который падает
-и больше не нужен: публикация идёт напрямую из ветки. Его можно удалить
-(`.github/workflows/`), чтобы не приходили письма о неудачных сборках.
 
 ---
 
@@ -143,12 +148,10 @@ npx wrangler tail                       # смотреть логи вживую
 `ItemList` из трёх проектов). При переключении языка меняются `lang`, `title`
 и `description`.
 
-`sitemap.xml` добавляется в Google Search Console вручную — полным адресом.
-
-**`robots.txt` намеренно нет.** Поисковики читают его только из корня домена
-(`magomedovmg71-lgtm.github.io/robots.txt`), а сайт лежит в подпапке `/maga-dev/` —
-файл в репозитории просто не читался бы никем. Появится свой домен — добавить
-обратно две строки.
+`robots.txt` лежит в корне домена, поэтому поисковики его читают и находят
+`sitemap.xml` сами. Так работает только у репозитория с именем
+`magomedovmg71-lgtm.github.io`: сайт в подпапке (`/что-то/`) робот бы не увидел,
+потому что robots.txt ищут строго по адресу `домен/robots.txt`.
 
 ## Что реализовано
 
