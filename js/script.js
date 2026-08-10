@@ -156,6 +156,11 @@
       sections.push(section);
     });
 
+    // The hero is observed without a link, so scrolling back to the top clears
+    // the highlight instead of leaving the last section marked as current.
+    var hero = document.getElementById('hero');
+    if (hero) sections.push(hero);
+
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
