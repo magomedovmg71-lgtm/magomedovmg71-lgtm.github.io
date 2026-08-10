@@ -42,20 +42,28 @@ npx http-server -p 8080 -c-1
 
 ---
 
-## Что нужно заполнить перед отправкой клиенту
+## Контакты на сайте
 
-В коде есть три места с временными значениями — их нужно заменить на свои:
+| Канал | Ссылка | Где на сайте |
+|---|---|---|
+| Почта | `magomedovmg71@gmail.com` | шапка, контакты, подвал, форма |
+| Telegram | `https://t.me/+79226765715` | шапка, контакты, подвал |
+| WhatsApp | `https://wa.me/79226765715` | шапка, контакты, подвал |
 
-| Что | Где | Сейчас | Нужно |
-|---|---|---|---|
-| Telegram | `index.html` (шапка, контакты, подвал) | `https://t.me/` | `https://t.me/ваш_ник` |
-| WhatsApp | `index.html` (шапка, контакты, подвал) | `https://wa.me/` | `https://wa.me/79991234567` (номер без `+` и пробелов) |
-| Домен сайта | `index.html` — `canonical`, `og:url`, `og:image`, JSON-LD | `https://magomedovmg71-lgtm.github.io/maga-dev/` | адрес, по которому сайт будет опубликован |
+Телефон продублирован в Schema.org (`Person.telephone`).
+
+Telegram открывается по номеру. Если появится короткий ник (`@nickname`) — заменить
+ссылку на `https://t.me/nickname`, так солиднее выглядит в адресной строке.
+
+## Что стоит заменить при переезде на свой домен
+
+`index.html` — `canonical`, `og:url`, `og:image`, `twitter:image` и три `@id` в JSON-LD
+сейчас указывают на `https://magomedovmg71-lgtm.github.io/maga-dev/`.
 
 Найти все места разом:
 
 ```bash
-grep -n "t.me/\|wa.me/\|maga-dev" index.html
+grep -n "maga-dev" index.html
 ```
 
 **Про Atlas Architects.** Раньше проект жил на Netlify, но та ссылка была приватной
