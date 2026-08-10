@@ -10,3 +10,8 @@ desktop.ini
 # Локальные и временные файлы, не относящиеся к сайту
 preview-compare.png
 .playwright-mcp/
+
+# Cloudflare Worker
+node_modules/
+.wrangler/
+.dev.vars

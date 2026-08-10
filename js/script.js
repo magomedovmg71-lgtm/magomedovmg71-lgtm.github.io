@@ -7,7 +7,7 @@
      initReveal         — fade-up reveals on scroll
      initHeroPointer    — subtle cursor-driven glow in the hero
      initCaseDialogs    — case study overlays
-     initContactForm    — client-side validation (demo form, no backend)
+     initContactForm    — validation + delivery to Telegram via a Worker
      initYear           — auto-updating copyright year
    ========================================================================== */
 
@@ -16,6 +16,12 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var MOBILE_QUERY = '(max-width: 899px)';
+
+  /* Contact channels. ENDPOINT is a Cloudflare Worker that keeps the Telegram
+     bot token on the server side — nothing secret is exposed here. */
+  var ENDPOINT = 'https://magadev-form.magomedovmg71.workers.dev';
+  var MAIL = 'magomedovmg71@gmail.com';
+  var WHATSAPP = '79226765715';
 
   /** Translation lookup — falls back to the key if i18n.js failed to load. */
   var i18n = window.MagaI18n || { init: function () {}, t: function (key) { return key; } };
@@ -345,6 +351,13 @@
         if (!EMAIL_RE.test(value)) return t('err.emailInvalid');
         return '';
       },
+      phone: function (value) {
+        if (!value) return t('err.phoneRequired');
+        // Считаем только цифры — скобки, дефисы и пробелы каждый пишет по-своему.
+        var digits = value.replace(/\D/g, '');
+        if (digits.length < 10 || digits.length > 15) return t('err.phoneInvalid');
+        return '';
+      },
       message: function (value) {
         if (!value) return t('err.messageRequired');
         if (value.length < 10) return t('err.messageShort');
@@ -377,20 +390,54 @@
       });
     });
 
-    function setStatus(text, state, mailtoHref) {
+    /**
+     * @param {string} text
+     * @param {string} state
+     * @param {Array<{href: string, label: string}>} [links] appended after the text
+     */
+    function setStatus(text, state, links) {
       status.className = 'form__status' + (state ? ' ' + state : '');
       status.textContent = text;
-      if (mailtoHref) {
+      (links || []).forEach(function (item) {
         status.appendChild(document.createTextNode(' '));
         var link = document.createElement('a');
-        link.href = mailtoHref;
-        link.textContent = t('form.mailLink');
+        link.href = item.href;
+        link.textContent = item.label;
+        if (item.href.indexOf('http') === 0) {
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+        }
         status.appendChild(link);
-      }
+      });
+    }
+
+    /** Ready-to-send message for the channels the visitor opens themselves. */
+    function composeText(lead) {
+      return t('form.leadIntro') + lead.name + '.\n\n' + lead.message +
+        '\n\n' + lead.email + '\n' + lead.phone;
+    }
+
+    function mailtoLink(lead) {
+      return 'mailto:' + MAIL + '?subject=' + encodeURIComponent(t('form.mailSubject') + lead.name) +
+        '&body=' + encodeURIComponent(lead.message + '\n\n—\n' + lead.name + '\n' + lead.email + '\n' + lead.phone);
+    }
+
+    function whatsappLink(lead) {
+      return 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(composeText(lead));
+    }
+
+    var submitButton = $('button[type="submit"]', form);
+    var sending = false;
+
+    function setBusy(state) {
+      sending = state;
+      if (submitButton) submitButton.disabled = state;
+      form.classList.toggle('is-sending', state);
     }
 
     form.addEventListener('submit', function (event) {
       event.preventDefault();
+      if (sending) return;
 
       var firstInvalid = null;
       inputs.forEach(function (input) {
@@ -403,16 +450,55 @@
         return;
       }
 
-      // No backend is connected — say so honestly and offer a working fallback.
-      var name = $('#name', form).value.trim();
-      var email = $('#email', form).value.trim();
-      var message = $('#message', form).value.trim();
+      var lead = {
+        name: $('#name', form).value.trim(),
+        email: $('#email', form).value.trim(),
+        phone: $('#phone', form).value.trim(),
+        message: $('#message', form).value.trim()
+      };
 
-      var mailto = 'mailto:magomedovmg71@gmail.com' +
-        '?subject=' + encodeURIComponent(t('form.mailSubject') + name) +
-        '&body=' + encodeURIComponent(message + '\n\n—\n' + name + '\n' + email);
+      // Old browsers without fetch still get a working path, just a manual one.
+      if (typeof window.fetch !== 'function') {
+        setStatus(t('form.noFetch'), 'is-error', [
+          { href: mailtoLink(lead), label: t('form.mailLink') },
+          { href: whatsappLink(lead), label: t('form.waLink') }
+        ]);
+        return;
+      }
 
-      setStatus(t('form.demo'), 'is-ok', mailto);
+      setBusy(true);
+      setStatus(t('form.sending'), '');
+
+      window.fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: lead.name,
+          email: lead.email,
+          phone: lead.phone,
+          message: lead.message,
+          website: $('#website', form) ? $('#website', form).value : '',
+          lang: i18n.lang || 'ru',
+          page: window.location.pathname
+        })
+      }).then(function (response) {
+        return response.json().catch(function () { return { ok: response.ok }; });
+      }).then(function (result) {
+        if (!result || !result.ok) throw new Error(result && result.error);
+        form.reset();
+        inputs.forEach(function (input) { setFieldState(input, ''); });
+        setStatus(t('form.sent'), 'is-ok', [
+          { href: whatsappLink(lead), label: t('form.waLink') }
+        ]);
+      }).catch(function () {
+        // Nothing was delivered — offer the two channels that never fail.
+        setStatus(t('form.failed'), 'is-error', [
+          { href: whatsappLink(lead), label: t('form.waLink') },
+          { href: mailtoLink(lead), label: t('form.mailLink') }
+        ]);
+      }).then(function () {
+        setBusy(false);
+      });
     });
 
     // Messages already on screen would be stranded in the previous language.

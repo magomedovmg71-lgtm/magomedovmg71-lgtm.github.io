@@ -1,0 +1,6 @@
+name = "magadev-form"
+main = "index.js"
+compatibility_date = "2026-08-01"
+
+# Секреты (токен бота, chat id, ключ почты) здесь НЕ хранятся — они задаются
+# командой `wrangler secret put ИМЯ` и лежат зашифрованными на стороне Cloudflare.

@@ -568,9 +568,15 @@
 
         <form class="form" id="contact-form" novalidate>
           <p class="form__notice" role="note" data-i18n="form.notice">
-            <strong>Демо-форма</strong> — подключите backend, чтобы получать сообщения.
-            Сейчас форма ничего не отправляет: напишите на почту, в Telegram или WhatsApp.
+            Отвечаю в течение рабочего дня. Если удобнее в мессенджере —
+            напишите в <strong>Telegram</strong> или <strong>WhatsApp</strong>.
           </p>
+
+          <!-- Ловушка для спам-ботов: людям поле не видно, автоматы его заполняют. -->
+          <div class="field field--trap" aria-hidden="true">
+            <label for="website">Не заполняйте это поле</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
 
           <div class="field">
             <label class="field__label" for="name" data-i18n="form.name">Имя</label>
@@ -584,6 +590,13 @@
             <input class="field__input" type="email" id="email" name="email" autocomplete="email"
                    required aria-describedby="email-error">
             <p class="field__error" id="email-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="phone" data-i18n="form.phone">Телефон</label>
+            <input class="field__input" type="tel" id="phone" name="phone" autocomplete="tel"
+                   inputmode="tel" placeholder="+7 900 000-00-00" required aria-describedby="phone-error">
+            <p class="field__error" id="phone-error" role="alert"></p>
           </div>
 
           <div class="field">

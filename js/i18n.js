@@ -160,9 +160,10 @@ window.MagaI18n = (function () {
     'contact.sub': 'Tell me about your task — we will work out which website fits your business.',
     'contact.direct': 'Direct',
     'contact.note': 'I answer by email, Telegram and WhatsApp.',
-    'form.notice': '<strong>Demo form</strong> — connect a backend to receive messages. Right now nothing is sent: write to me by email, Telegram or WhatsApp.',
+    'form.notice': 'I reply within one working day. If a messenger suits you better — write on <strong>Telegram</strong> or <strong>WhatsApp</strong>.',
     'form.name': 'Name',
     'form.email': 'Email',
+    'form.phone': 'Phone',
     'form.message': 'Message',
     'form.send': 'Send message',
 
@@ -218,12 +219,19 @@ window.MagaI18n = (function () {
     'err.nameShort': 'Your name needs at least 2 characters.',
     'err.emailRequired': 'Add an email so I can reply.',
     'err.emailInvalid': 'Check the email format — for example name@example.com',
+    'err.phoneRequired': 'Add a phone number so I can call back.',
+    'err.phoneInvalid': 'Check the number — for example +7 900 000-00-00',
     'err.messageRequired': 'Describe the task in a couple of words.',
     'err.messageShort': 'A little too short — add some detail (10 characters minimum).',
     'form.checkFields': 'Please check the highlighted fields.',
-    'form.demo': 'This is a demo form and sends nothing — no backend is connected.',
+    'form.sending': 'Sending…',
+    'form.sent': 'Sent — I will reply within one working day.',
+    'form.failed': 'Could not send it. Reach me directly:',
+    'form.noFetch': 'Your browser is too old for this form. Reach me directly:',
     'form.mailLink': 'Send it as an email →',
-    'form.mailSubject': 'Project — '
+    'form.waLink': 'Duplicate on WhatsApp →',
+    'form.mailSubject': 'Project — ',
+    'form.leadIntro': 'Hello! My name is '
   };
 
   /* Runtime strings that are not present anywhere in the markup. */
@@ -236,12 +244,19 @@ window.MagaI18n = (function () {
     'err.nameShort': 'Имя должно содержать минимум 2 символа.',
     'err.emailRequired': 'Укажите email для ответа.',
     'err.emailInvalid': 'Проверьте формат email — например, name@example.com',
+    'err.phoneRequired': 'Укажите телефон, чтобы я мог перезвонить.',
+    'err.phoneInvalid': 'Проверьте номер — например, +7 900 000-00-00',
     'err.messageRequired': 'Опишите задачу хотя бы в двух словах.',
     'err.messageShort': 'Слишком коротко — добавьте деталей (минимум 10 символов).',
     'form.checkFields': 'Проверьте отмеченные поля.',
-    'form.demo': 'Форма работает в демо-режиме и ничего не отправляет — backend не подключён.',
+    'form.sending': 'Отправляю…',
+    'form.sent': 'Заявка отправлена — отвечу в течение рабочего дня.',
+    'form.failed': 'Не получилось отправить. Напишите напрямую:',
+    'form.noFetch': 'Браузер устарел и не может отправить форму. Напишите напрямую:',
     'form.mailLink': 'Отправить письмом →',
-    'form.mailSubject': 'Проект — '
+    'form.waLink': 'Продублировать в WhatsApp →',
+    'form.mailSubject': 'Проект — ',
+    'form.leadIntro': 'Здравствуйте! Меня зовут '
   };
 
   var DICT = { en: EN, ru: RU };

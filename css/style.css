@@ -1392,6 +1392,27 @@ p { text-wrap: pretty; }
   gap: 0.5rem;
 }
 
+/* Ловушка для спам-ботов. Убрана из потока и с экрана, но не через
+   display:none — часть автоматов такие поля игнорирует. */
+.field--trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Пока заявка уходит, форма приглушается, а кнопка становится недоступной. */
+.form.is-sending { opacity: 0.6; pointer-events: none; }
+
+.form__status a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.form__status a:hover { color: var(--accent-strong); }
+
 .field__label {
   color: var(--text-faint);
   font-size: var(--fs-xs);
