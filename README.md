@@ -21,7 +21,6 @@
 ├── fonts/              — Inter (woff2, подмножества latin + cyrillic)
 ├── images/             — скриншоты проектов, favicon, OG-изображение
 ├── worker/             — Cloudflare Worker, принимающий заявки с формы
-├── robots.txt
 ├── sitemap.xml
 └── README.md
 ```
@@ -144,10 +143,12 @@ npx wrangler tail                       # смотреть логи вживую
 `ItemList` из трёх проектов). При переключении языка меняются `lang`, `title`
 и `description`.
 
-⚠️ **Про `robots.txt`.** Поисковики читают его только из корня домена —
-`magomedovmg71-lgtm.github.io/robots.txt`. Пока сайт лежит в подпапке `/maga-dev/`,
-этот файл не работает: он заработает сам, когда появится свой домен. `sitemap.xml`
-при этом можно добавить в Google Search Console вручную, указав полный адрес.
+`sitemap.xml` добавляется в Google Search Console вручную — полным адресом.
+
+**`robots.txt` намеренно нет.** Поисковики читают его только из корня домена
+(`magomedovmg71-lgtm.github.io/robots.txt`), а сайт лежит в подпапке `/maga-dev/` —
+файл в репозитории просто не читался бы никем. Появится свой домен — добавить
+обратно две строки.
 
 ## Что реализовано
 

@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://magomedovmg71-lgtm.github.io/maga-dev/sitemap.xml
