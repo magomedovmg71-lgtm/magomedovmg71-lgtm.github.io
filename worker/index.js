@@ -76,8 +76,10 @@ export default {
     if (env.RESEND_API_KEY && env.MAIL_TO) {
       try {
         await sendEmail(env, { name, email, phone, message, meta });
-      } catch {
-        /* Telegram доставил — этого достаточно. */
+      } catch (error) {
+        // Telegram уже доставил, заявка не потеряна. Но причину записываем:
+        // без неё молчаливо сломавшаяся почта осталась бы незамеченной.
+        console.error('Письмо не ушло:', error.message);
       }
     }
 
@@ -168,7 +170,7 @@ async function sendTelegram(env, { name, email, phone, message, meta }) {
 }
 
 async function sendEmail(env, { name, email, phone, message, meta }) {
-  await fetch('https://api.resend.com/emails', {
+  const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${env.RESEND_API_KEY}`,
@@ -191,4 +193,8 @@ async function sendEmail(env, { name, email, phone, message, meta }) {
       ].join('\n')
     })
   });
+
+  if (!response.ok) {
+    throw new Error(`Resend ответил ${response.status}: ${await response.text()}`);
+  }
 }
