@@ -60,27 +60,48 @@ Telegram открывается по номеру. Если появится к�
 
 ## Где опубликовано
 
-Репозиторий `magomedovmg71-lgtm/magomedovmg71-lgtm.github.io`, ветка `main`.
-Имя репозитория совпадает с именем пользователя, поэтому GitHub отдаёт сайт
-по короткому адресу **https://magomedovmg71-lgtm.github.io/** — без подпапки.
+Сайт открывается по адресу **https://magomedov.website/**
 
-### При переезде на свой домен
+Репозиторий — `magomedovmg71-lgtm/magomedovmg71-lgtm.github.io`, ветка `main`.
+Домен зарегистрирован в reg.ru и подключён к GitHub Pages файлом `CNAME`
+в корне репозитория. Старый адрес `magomedovmg71-lgtm.github.io` отдаёт
+постоянную переадресацию (301) на домен, поэтому ссылки на него не ломаются.
 
-1. `index.html` — заменить адрес в `canonical`, `og:url`, `og:image`, `twitter:image`
+DNS-записи в панели reg.ru:
+
+```
+A     @     185.199.108.153
+A     @     185.199.109.153
+A     @     185.199.110.153
+A     @     185.199.111.153
+CNAME www   magomedovmg71-lgtm.github.io.
+```
+
+Четыре A-записи — это адреса серверов GitHub Pages, они одинаковы для всех.
+Точка в конце CNAME обязательна: без неё регистратор припишет к значению
+собственный домен.
+
+**Продление домена — раз в год.** Зона `.website` стоит около 2 440 ₽ в год.
+Если домен слетит, сайт перестанет открываться, поэтому автопродление включено.
+
+### Если домен когда-нибудь сменится
+
+1. `CNAME` в корне — вписать новый домен
+2. `index.html` — заменить адрес в `canonical`, `og:url`, `og:image`, `twitter:image`
    и трёх `@id` в JSON-LD
-2. `sitemap.xml` и `robots.txt` — заменить адрес
-3. `worker/index.js` — добавить домен в `ALLOWED_ORIGINS`, затем `npx wrangler deploy`
+3. `sitemap.xml` и `robots.txt` — заменить адрес
+4. `worker/index.js` — добавить домен в `ALLOWED_ORIGINS`, затем `npx wrangler deploy`
 
 Найти все места разом:
 
 ```bash
-grep -rn "magomedovmg71-lgtm.github.io/\"" index.html sitemap.xml robots.txt
+grep -rn "magomedov.website" CNAME index.html sitemap.xml robots.txt worker/index.js
 ```
 
 **Про Atlas Architects.** Раньше проект жил на Netlify, но та ссылка была приватной
 и просила войти в аккаунт. Сейчас сайт опубликован на GitHub Pages из ветки `master`
 репозитория `atlas-architects` и открывается по адресу
-`https://magomedovmg71-lgtm.github.io/atlas-architects/` — именно он стоит в портфолио.
+`https://magomedov.website/atlas-architects/` — именно он стоит в портфолио.
 
 ---
 
@@ -88,9 +109,14 @@ grep -rn "magomedovmg71-lgtm.github.io/\"" index.html sitemap.xml robots.txt
 
 | # | Проект | Ссылка |
 |---|---|---|
-| 01 | VELAR DETAIL — детейлинг-студия | https://magomedovmg71-lgtm.github.io/velar-detail/ |
-| 02 | SHAFRAN — ресторан | https://magomedovmg71-lgtm.github.io/shafran/ |
-| 03 | ATLAS ARCHITECTS — архитектурное бюро | https://magomedovmg71-lgtm.github.io/atlas-architects/ · [код](https://github.com/magomedovmg71-lgtm/atlas-architects) |
+| 01 | VELAR DETAIL — детейлинг-студия | https://magomedov.website/velar-detail/ |
+| 02 | SHAFRAN — ресторан | https://magomedov.website/shafran/ |
+| 03 | ATLAS ARCHITECTS — архитектурное бюро | https://magomedov.website/atlas-architects/ · [код](https://github.com/magomedovmg71-lgtm/atlas-architects) |
+
+Проекты лежат в отдельных репозиториях, но публикуются под тем же доменом:
+GitHub Pages отдаёт сайт репозитория `velar-detail` по адресу
+`magomedov.website/velar-detail/`. Так работает, потому что домен подключён
+к репозиторию пользователя — остальные его проекты подхватывают домен сами.
 
 Превью проектов — реальные скриншоты этих сайтов, снятые в двойном разрешении
 (десктоп 2880×1800, мобильный 1170×2532). Каждый сохранён в WebP в трёх размерах —
@@ -138,7 +164,7 @@ npx wrangler tail                       # смотреть логи вживую
 Секреты: `TELEGRAM_TOKEN`, `TELEGRAM_CHAT_ID`. Необязательные `RESEND_API_KEY` и `MAIL_TO` —
 если их задать, заявка продублируется на почту.
 
-**При переезде на свой домен** добавьте его в `ALLOWED_ORIGINS` в `worker/index.js`
+**При смене домена** добавьте новый в `ALLOWED_ORIGINS` в `worker/index.js`
 и заново выполните `npx wrangler deploy`, иначе форма начнёт отвечать «Запрос с чужого адреса».
 
 ## SEO
@@ -148,10 +174,9 @@ npx wrangler tail                       # смотреть логи вживую
 `ItemList` из трёх проектов). При переключении языка меняются `lang`, `title`
 и `description`.
 
-`robots.txt` лежит в корне домена, поэтому поисковики его читают и находят
-`sitemap.xml` сами. Так работает только у репозитория с именем
-`magomedovmg71-lgtm.github.io`: сайт в подпапке (`/что-то/`) робот бы не увидел,
-потому что robots.txt ищут строго по адресу `домен/robots.txt`.
+`robots.txt` лежит в корне домена (`magomedov.website/robots.txt`), поэтому
+поисковики его читают и находят `sitemap.xml` сами. Файл ищут строго по адресу
+`домен/robots.txt` — в подпапке робот бы его не увидел.
 
 ## Что реализовано
 
