@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MAGOMEDOV.DEV — behaviour
+   MAGOMEDOV.WEB — behaviour
    Modules:
      initHeaderScroll   — sticky header background on scroll
      initMobileNav      — hamburger drawer

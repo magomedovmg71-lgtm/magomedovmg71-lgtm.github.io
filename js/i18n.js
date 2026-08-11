@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MAGOMEDOV.DEV — RU / EN
+   MAGOMEDOV.WEB — RU / EN
 
    Russian is the source language and lives directly in index.html, so the page
    is complete and readable without JavaScript. This file holds the English
@@ -28,7 +28,7 @@ window.MagaI18n = (function () {
   var EN = {
     /* Accessibility labels */
     'a11y.skip': 'Skip to content',
-    'a11y.home': 'MAGOMEDOV.DEV — back to top',
+    'a11y.home': 'MAGOMEDOV.WEB — back to top',
     'a11y.nav': 'Main navigation',
     'a11y.footerNav': 'Footer navigation',
     'a11y.caseClose': 'Close case study',
@@ -174,7 +174,7 @@ window.MagaI18n = (function () {
     'footer.links': 'Elsewhere',
     'footer.email': 'Email',
     'footer.code': 'Atlas source <span aria-hidden="true">↗</span>',
-    'footer.by': 'Designed &amp; built by MAGOMEDOV.DEV',
+    'footer.by': 'Designed &amp; built by MAGOMEDOV.WEB',
 
     /* Case studies — shared headings */
     'case.h1': 'Project',
@@ -212,8 +212,8 @@ window.MagaI18n = (function () {
     'c3.s6': 'The site is published and its source code is open on GitHub. It is the most editorial and the most technically complete of the three: two languages, an interactive slider and a full set of SEO and accessibility work.',
 
     /* Runtime strings */
-    'meta.title': 'MAGOMEDOV.DEV — Modern websites for business',
-    'meta.description': 'MAGOMEDOV.DEV — modern, fast and responsive websites for business. Three real projects: a detailing studio, a restaurant and an architecture practice.',
+    'meta.title': 'MAGOMEDOV.WEB — Modern websites for business',
+    'meta.description': 'MAGOMEDOV.WEB — modern, fast and responsive websites for business. Three real projects: a detailing studio, a restaurant and an architecture practice.',
     'a11y.menuOpen': 'Open menu',
     'a11y.menuClose': 'Close menu',
     'a11y.lang': 'Переключить на русский',
@@ -242,8 +242,8 @@ window.MagaI18n = (function () {
 
   /* Runtime strings that are not present anywhere in the markup. */
   var RU = {
-    'meta.title': 'MAGOMEDOV.DEV — Разработка современных сайтов для бизнеса',
-    'meta.description': 'MAGOMEDOV.DEV — веб-разработка современных, быстрых и адаптивных сайтов для бизнеса. Три реальных проекта: детейлинг-студия, ресторан и архитектурное бюро.',
+    'meta.title': 'MAGOMEDOV.WEB — Разработка современных сайтов для бизнеса',
+    'meta.description': 'MAGOMEDOV.WEB — веб-разработка современных, быстрых и адаптивных сайтов для бизнеса. Три реальных проекта: детейлинг-студия, ресторан и архитектурное бюро.',
     'a11y.menuOpen': 'Открыть меню',
     'a11y.menuClose': 'Закрыть меню',
     'a11y.lang': 'Switch to English',
