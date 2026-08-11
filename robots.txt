@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://magomedovmg71-lgtm.github.io/sitemap.xml
+Sitemap: https://magomedov.website/sitemap.xml

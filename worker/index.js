@@ -16,6 +16,10 @@
 // Отвечаем только своему сайту. Локальные адреса — чтобы можно было
 // проверять форму до публикации.
 const ALLOWED_ORIGINS = [
+  'https://magomedov.website',
+  'https://www.magomedov.website',
+  // Старый адрес GitHub Pages: с него идёт переадресация на домен, но пока
+  // ссылка где-то осталась, заявка с неё тоже должна доходить.
   'https://magomedovmg71-lgtm.github.io',
   'http://localhost:8080',
   'http://127.0.0.1:8080'
