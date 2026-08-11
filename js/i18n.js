@@ -112,8 +112,8 @@ window.MagaI18n = (function () {
 
     /* About */
     'about.title': 'Building websites,<br>not templates.',
-    'about.p1': 'I build websites that look current, load fast and work equally well on desktop, tablet and phone.',
-    'about.p2': 'Every project is written by hand — no page builders, no heavy templates.',
+    'about.p1': 'My name is Magomed, I am a web developer based in Makhachkala. I build websites that look current, load fast and work equally well on desktop, tablet and phone.',
+    'about.p2': 'Every project is written by hand — no page builders, no heavy templates. I work with clients from any city, entirely online.',
     'trait.1': 'Responsive',
     'trait.2': 'Fast',
     'trait.3': 'SEO-ready',
@@ -212,8 +212,8 @@ window.MagaI18n = (function () {
     'c3.s6': 'The site is published and its source code is open on GitHub. It is the most editorial and the most technically complete of the three: two languages, an interactive slider and a full set of SEO and accessibility work.',
 
     /* Runtime strings */
-    'meta.title': 'MAGOMEDOV.WEB — Modern websites for business',
-    'meta.description': 'MAGOMEDOV.WEB — modern, fast and responsive websites for business. Three real projects: a detailing studio, a restaurant and an architecture practice.',
+    'meta.title': 'Web development in Makhachkala — MAGOMEDOV.WEB',
+    'meta.description': 'Magomed, a web developer based in Makhachkala. Modern, fast and responsive websites for business: landing pages, one-pagers and corporate sites. Working with clients from any city. Three real projects in the portfolio.',
     'a11y.menuOpen': 'Open menu',
     'a11y.menuClose': 'Close menu',
     'a11y.lang': 'Переключить на русский',
@@ -242,8 +242,8 @@ window.MagaI18n = (function () {
 
   /* Runtime strings that are not present anywhere in the markup. */
   var RU = {
-    'meta.title': 'MAGOMEDOV.WEB — Разработка современных сайтов для бизнеса',
-    'meta.description': 'MAGOMEDOV.WEB — веб-разработка современных, быстрых и адаптивных сайтов для бизнеса. Три реальных проекта: детейлинг-студия, ресторан и архитектурное бюро.',
+    'meta.title': 'Создание сайтов в Махачкале — MAGOMEDOV.WEB',
+    'meta.description': 'Магомед — веб-разработчик из Махачкалы. Создаю современные, быстрые и адаптивные сайты для бизнеса: лендинги, сайты-визитки, корпоративные сайты. Работаю с клиентами из любого города. Три реальных проекта в портфолио.',
     'a11y.menuOpen': 'Открыть меню',
     'a11y.menuClose': 'Закрыть меню',
     'a11y.lang': 'Switch to English',
