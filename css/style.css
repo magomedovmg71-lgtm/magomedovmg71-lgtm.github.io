@@ -666,6 +666,13 @@ p { text-wrap: pretty; }
     word-break: break-all;
   }
 
+  /* Звонок доходит всегда — ни VPN, ни установленных приложений он не требует.
+     Поэтому телефон в меню светлее почты, а не наравне с ней. */
+  .nav__phone {
+    color: var(--text);
+    word-break: normal;
+  }
+
   .nav__socials {
     display: flex;
     gap: 1.5rem;
