@@ -77,15 +77,15 @@ window.MagaI18n = (function () {
     'fact.langs': 'Languages',
     'cap.mobile': 'Mobile version',
 
-    /* Project 01 — VELAR */
-    'p1.cat': 'Automotive / Detailing',
-    'p1.open': 'Open the VELAR DETAIL website in a new tab',
-    'p1.desc': 'A premium detailing studio website with services, a work gallery, a Before&nbsp;/&nbsp;After block and a booking form.',
-    'p1.cap1': 'Before / After — interactive comparison',
-    'p1.alt1': 'VELAR DETAIL homepage: a dark detailing studio page with a large headline and a booking button',
-    'p1.alt2': 'Before / After block on the VELAR DETAIL website with an interactive comparison slider',
-    'p1.alt3': 'Mobile version of the VELAR DETAIL website on a phone screen',
-    'p1.alt4': 'Services section of the VELAR DETAIL website with service cards leading into the price list',
+    /* Project 01 — USTA */
+    'p1.cat': 'Barbershop / Services',
+    'p1.open': 'Open the USTA website in a new tab',
+    'p1.desc': 'A barbershop website: price list, barbers, a work gallery and online booking. Smooth inertia scrolling written by hand, no libraries.',
+    'p1.cap1': 'Work gallery with arrow controls',
+    'p1.alt1': 'USTA barbershop homepage: a dark page with a large name and a booking button',
+    'p1.alt2': 'Work gallery on the USTA website: a strip of haircut photos with arrow controls',
+    'p1.alt3': 'Mobile version of the USTA barbershop website on a phone screen',
+    'p1.alt4': 'Price list on the USTA website: service rows with dotted leaders and prices',
 
     /* Project 02 — SHAFRAN */
     'p2.cat': 'Restaurant / Hospitality',
@@ -184,13 +184,13 @@ window.MagaI18n = (function () {
     'case.h5': 'Technologies',
     'case.h6': 'Result',
 
-    /* Case 01 — VELAR */
-    'c1.lead': 'A premium detailing studio website: services, pricing, a work gallery, a Before / After block and a booking form.',
-    'c1.s1': 'A one-page website for a detailing studio. The goal was to show the level of the work and take the visitor through to a booking. Dark automotive styling, a warm gold accent, large type.',
-    'c1.s2': 'Detailing is sold by the result, and the result is hard to explain in words. The page had to show the before / after difference first, and only then ask for the booking.',
-    'c1.s3': 'A clear sequence of screens: services → pricing → work → booking. Every block ends with an obvious next step. The dark palette keeps attention on the cars.',
-    'c1.feat': '<li>Interactive Before / After slider</li><li>Services block and transparent pricing</li><li>Booking form with validation</li><li>Mobile menu, responsive from 320px</li>',
-    'c1.s6': 'The finished site is published on GitHub Pages and available at a direct link. It opens on desktop and mobile, and every interactive element runs without third-party libraries.',
+    /* Case 01 — USTA */
+    'c1.lead': 'A barbershop website: price list, barbers, a work gallery and online booking. Dark styling, a brass accent, smooth scrolling without libraries.',
+    'c1.s1': 'A one-page website for a barbershop. The goal was to take the visitor through to a booking. A dark base, brass as the only accent, large signboard type.',
+    'c1.s2': 'Barbershops usually have no website: prices and booking live in chat, and the guest never sees the full list of services. The page had to make prices and free slots clear at a glance, without a phone call.',
+    'c1.s3': 'The order of screens follows the guest: prices → barbers → work → booking. The price list is set in rows with dotted leaders, the way an old barbershop board reads — a second to scan.',
+    'c1.feat': '<li>Smooth inertia scrolling, written by hand</li><li>Full-screen hero with changing frames and parallax</li><li>Work gallery with arrow controls</li><li>Booking form with validation and a bot trap</li>',
+    'c1.s6': 'The page is ready in 40 ms, ships two files of its own and not a single external library. Scrolling moves in whole pixels and does not shudder as it settles — measured, not assumed.',
 
     /* Case 02 — SHAFRAN */
     'c2.lead': 'A modern restaurant website built around atmosphere, menu, photography and table booking.',
