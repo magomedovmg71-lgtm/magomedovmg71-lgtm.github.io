@@ -520,6 +520,128 @@
     });
   }
 
+  /* ----------------------------------------------------- smooth page scroll */
+
+  /* Wheel input is intercepted and the page eases towards a target instead of
+     jumping. The step is damped and the coefficient is low, so the movement is
+     slow and heavy. Mouse only: on touch screens the native scroll is better.
+
+     Two details that matter:
+     — the step is derived from frame time, not frame count, so 60 Hz and
+       144 Hz move at the same speed;
+     — the screen scrolls in whole pixels, so anything slower than one pixel
+       per frame is bound to shudder. On the tail the motion switches to an
+       even one-pixel-per-frame run until it lands. */
+
+  function initSmoothScroll() {
+    var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!canHover) return;
+
+    var target = window.scrollY;
+    var current = window.scrollY;
+    var ease = prefersReducedMotion() ? 0.12 : 0.048;
+    var damp = prefersReducedMotion() ? 0.8 : 0.55;
+    var cap = 170;
+    var running = false;
+    var lastFrame = 0;
+    var lastY = -1;
+
+    function limit() {
+      return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    }
+
+    function toPixels(event) {
+      if (event.deltaMode === 1) return event.deltaY * 16;
+      if (event.deltaMode === 2) return event.deltaY * window.innerHeight;
+      return event.deltaY;
+    }
+
+    function frame(now) {
+      var gap = target - current;
+
+      if (Math.abs(gap) < 1) {
+        current = target;
+        var end = Math.round(current);
+        if (end !== lastY) { window.scrollTo(0, end); lastY = end; }
+        running = false;
+        lastFrame = 0;
+        return;
+      }
+
+      var dt = lastFrame ? Math.min(now - lastFrame, 50) : 16.7;
+      lastFrame = now;
+      var k = 1 - Math.pow(1 - ease, dt / 16.7);
+
+      var move = gap * k;
+      if (Math.abs(move) < 1) {
+        move = (gap > 0 ? 1 : -1) * Math.min(1, Math.abs(gap));
+      }
+
+      current += move;
+      var y = Math.round(current);
+      if (y !== lastY) { window.scrollTo(0, y); lastY = y; }
+
+      window.requestAnimationFrame(frame);
+    }
+
+    function run() {
+      if (!running) {
+        running = true;
+        window.requestAnimationFrame(frame);
+      }
+    }
+
+    window.addEventListener('wheel', function (event) {
+      if (event.ctrlKey) return;                                 // leave zoom alone
+      if (document.body.classList.contains('is-locked')) return;  // an overlay is open
+      if (event.target && event.target.closest &&
+          event.target.closest('.case__scroll, .nav-drawer, dialog')) return;
+
+      event.preventDefault();
+
+      var move = toPixels(event) * damp;
+      move = Math.max(-cap, Math.min(move, cap));
+      target = Math.max(0, Math.min(target + move, limit()));
+      run();
+    }, { passive: false });
+
+    /* Keys, the scrollbar and anchor jumps move the page past us — pick the
+       position back up so the next wheel event does not snap. */
+    window.addEventListener('scroll', function () {
+      if (!running) { target = current = lastY = window.scrollY; }
+    }, { passive: true });
+
+    window.addEventListener('resize', function () {
+      target = Math.min(target, limit());
+    }, { passive: true });
+
+    /* The browser skips frames in a hidden tab: coming back, resync so the
+       page does not lurch towards a stale target. */
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) {
+        target = current = lastY = window.scrollY;
+        running = false;
+        lastFrame = 0;
+      }
+    });
+
+    /* Anchor links go through the same easing instead of the native jump. */
+    $$('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        var id = link.getAttribute('href');
+        if (!id || id.length < 2) return;
+        var dest = $(id);
+        if (!dest) return;
+
+        event.preventDefault();
+        var header = document.documentElement.style.getPropertyValue('--header-h');
+        var offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h'), 10) || 72;
+        target = Math.max(0, Math.min(dest.getBoundingClientRect().top + window.scrollY - offset - 24, limit()));
+        run();
+      });
+    });
+  }
+
   /* ------------------------------------------------------------------- year */
 
   function initYear() {
@@ -537,6 +659,7 @@
     initReveal();
     initHeroPointer();
     initCaseDialogs();
+    initSmoothScroll();
     initContactForm();
     initYear();
   }

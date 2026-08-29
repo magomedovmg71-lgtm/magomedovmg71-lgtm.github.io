@@ -113,7 +113,8 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth;
+  /* Плавность даёт скрипт (initSmoothScroll): у нативной свои кривые,
+     и вместе они спорят за позицию — страница дёргается. */
   scroll-padding-top: calc(var(--header-h) + 1.5rem);
 }
 
