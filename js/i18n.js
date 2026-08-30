@@ -55,7 +55,7 @@ window.MagaI18n = (function () {
     'hero.m1': 'Web Development',
     'hero.m2': 'UI',
     'hero.m3': 'Performance',
-    'hero.r1': '03 — selected projects',
+    'hero.r1': '04 — selected projects',
     'hero.scroll': 'Scroll',
 
     /* Section labels */
@@ -67,7 +67,7 @@ window.MagaI18n = (function () {
     'sec.contact': 'Contact',
 
     'work.title': 'Selected work',
-    'work.sub': 'Three projects that show how I approach design and development.',
+    'work.sub': 'Four projects that show how I approach design and development.',
 
     /* Shared facts */
     'fact.role': 'Role',
@@ -77,7 +77,16 @@ window.MagaI18n = (function () {
     'fact.langs': 'Languages',
     'cap.mobile': 'Mobile version',
 
-    /* Project 01 — USTA */
+    /* Project 01 — NA RUKI */
+    'p0.cat': 'Coffee shop and street food / Delivery',
+    'p0.open': 'Open the NA RUKI website in a new tab',
+    'p0.desc': 'A coffee shop with street food: a 22-item menu with filtering, a cart and a three-step checkout — delivery, pickup or dine-in. The delivery fee is calculated by district, and guests book a specific table rather than “somewhere”.',
+    'p0.cap1': 'A 22-item menu with category filtering',
+    'p0.alt1': 'NA RUKI coffee shop homepage: a large headline and photos of coffee to go',
+    'p0.alt2': 'NA RUKI menu page: dish cards with photos, prices and a category filter',
+    'p0.alt3': 'Mobile version of the NA RUKI coffee shop website on a phone screen',
+
+    /* Project 02 — USTA */
     'p1.cat': 'Barbershop / Services',
     'p1.open': 'Open the USTA website in a new tab',
     'p1.desc': 'A barbershop website: price list, barbers, a work gallery and online booking. Smooth inertia scrolling written by hand, no libraries.',
@@ -87,7 +96,7 @@ window.MagaI18n = (function () {
     'p1.alt3': 'Mobile version of the USTA barbershop website on a phone screen',
     'p1.alt4': 'Price list on the USTA website: service rows with dotted leaders and prices',
 
-    /* Project 02 — SHAFRAN */
+    /* Project 03 — SHAFRAN */
     'p2.cat': 'Restaurant / Hospitality',
     'p2.open': 'Open the SHAFRAN website in a new tab',
     'p2.desc': 'A modern restaurant website built around atmosphere, menu, photography and table booking.',
@@ -98,7 +107,7 @@ window.MagaI18n = (function () {
     'p2.alt3': 'Mobile version of the SHAFRAN restaurant website on a phone screen',
     'p2.alt4': 'Interior and food gallery on the SHAFRAN restaurant website',
 
-    /* Project 03 — ATLAS */
+    /* Project 04 — ATLAS */
     'p3.cat': 'Architecture / Studio',
     'p3.open': 'Open the ATLAS ARCHITECTS website in a new tab',
     'p3.desc': 'A premium website for an architecture studio, designed and built from scratch.',
