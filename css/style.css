@@ -1012,6 +1012,11 @@ p { text-wrap: pretty; }
   align-items: end;
 }
 
+/* У НА РУКИ в ленте три кадра, а не два */
+.project__strip--trio {
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.6fr) minmax(0, 1fr);
+}
+
 .strip__item img,
 .duo__item img,
 .compare-figure img {

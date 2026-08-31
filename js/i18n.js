@@ -85,6 +85,8 @@ window.MagaI18n = (function () {
     'p0.alt1': 'NA RUKI coffee shop homepage: a large headline and photos of coffee to go',
     'p0.alt2': 'NA RUKI menu page: dish cards with photos, prices and a category filter',
     'p0.alt3': 'Mobile version of the NA RUKI coffee shop website on a phone screen',
+    'p0.alt4': 'NA RUKI combo block: breakfast and coffee pickers, 490 ₽ instead of 680 ₽',
+    'p0.cap2': 'Combo: pick a pair, discount applied in the cart',
 
     /* Project 02 — USTA */
     'p1.cat': 'Barbershop / Services',
