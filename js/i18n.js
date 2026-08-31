@@ -80,7 +80,7 @@ window.MagaI18n = (function () {
     /* Project 01 — NA RUKI */
     'p0.cat': 'Coffee shop and street food / Delivery',
     'p0.open': 'Open the NA RUKI website in a new tab',
-    'p0.desc': 'A coffee shop with street food: a 22-item menu with filtering, a cart and a three-step checkout — delivery, pickup or dine-in. The delivery fee is calculated by district, and guests book a specific table rather than “somewhere”.',
+    'p0.desc': 'A coffee shop with street food: a 22-item menu with filtering, a cart and a three-step checkout — delivery, pickup or dine-in. The delivery fee is calculated by district, and guests book a specific table rather than “somewhere”. A breakfast combo is built from two dishes, with the discount calculated automatically and switched on by the hour.',
     'p0.cap1': 'A 22-item menu with category filtering',
     'p0.alt1': 'NA RUKI coffee shop homepage: a large headline and photos of coffee to go',
     'p0.alt2': 'NA RUKI menu page: dish cards with photos, prices and a category filter',
