@@ -116,6 +116,9 @@ html {
   /* Плавность даёт скрипт (initSmoothScroll): у нативной свои кривые,
      и вместе они спорят за позицию — страница дёргается. */
   scroll-padding-top: calc(var(--header-h) + 1.5rem);
+  overflow-x: clip;            /* страницу нельзя утянуть вбок: clip не создаёт контейнер прокрутки */
+  overscroll-behavior-x: none; /* и не отскакивает резинкой при свайпе */
+  touch-action: manipulation;  /* двойной тап не зумит */
 }
 
 body {
@@ -129,11 +132,20 @@ body {
   font-synthesis-weight: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
   text-rendering: optimizeLegibility;
 }
 
 body.is-locked { overflow: hidden; }
+
+/* backdrop-filter делает шапку containing block для fixed-потомков, а дровер
+   лежит внутри неё: после прокрутки он сжимался до высоты шапки и пункты
+   не открывались. Пока меню открыто, блюр снимаем — без перехода, иначе
+   containing block живёт всё время анимации. */
+body.is-locked .site-header {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: none;
+}
 
 img,
 picture,
@@ -638,6 +650,9 @@ p { text-wrap: pretty; }
     flex-direction: column;
     align-items: stretch;
     gap: 0;
+    /* на планшете между пунктами и контактами зияла пустота в пол-экрана:
+       auto-поля ставят список в оптический центр, контакты остаются внизу */
+    margin-block: auto;
   }
 
   .nav__list li { border-bottom: 1px solid var(--line); }
