@@ -6,9 +6,15 @@
  * JavaScript. Этот Worker стоит посередине и хранит токен у себя — в код сайта
  * попадает только его адрес.
  *
+ * Второй вход — /tg: сюда Telegram шлёт всё, что пишут боту. Ссылка вида
+ * t.me/<бот>?start=naruki даёт понять, с какой работы пришёл человек, а
+ * переписка с ним идёт через бота, отдельно от личных чатов.
+ *
  * Секреты задаются командой `wrangler secret put ИМЯ`:
  *   TELEGRAM_TOKEN    — токен бота от @BotFather
  *   TELEGRAM_CHAT_ID  — числовой id получателя
+ *   TG_HOOK_SECRET    — своя строка, её же указать в setWebhook: без неё
+ *                       на /tg мог бы постучаться кто угодно
  *   RESEND_API_KEY    — необязательно: если задан, заявка дублируется на почту
  *   MAIL_TO           — необязательно: адрес для копии
  */
@@ -27,8 +33,23 @@ const ALLOWED_ORIGINS = [
 
 const LIMITS = { name: 100, email: 200, phone: 40, message: 4000 };
 
+// Откуда пришёл человек. Ключ — метка из ссылки t.me/<бот>?start=<метка>.
+const SOURCES = {
+  naruki: 'НА РУКИ',
+  shafran: 'Шафран',
+  usta: 'УСТА',
+  atlas: 'Atlas Architects',
+  site: 'magomedov.website'
+};
+
 export default {
   async fetch(request, env) {
+    // Telegram стучится без заголовка Origin, поэтому его вход стоит до
+    // проверок CORS — иначе все обновления отбивались бы как чужой запрос.
+    if (new URL(request.url).pathname === '/tg') {
+      return telegramHook(request, env);
+    }
+
     const origin = request.headers.get('Origin') || '';
     const cors = corsHeaders(origin);
 
@@ -157,20 +178,137 @@ async function sendTelegram(env, { name, email, phone, message, meta }) {
     `<i>${escapeHtml(meta.country)} · ${escapeHtml(meta.lang)} · ${escapeHtml(meta.page)}</i>`
   ].join('\n');
 
-  const response = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_TOKEN}/sendMessage`, {
+  await tg(env, 'sendMessage', {
+    chat_id: env.TELEGRAM_CHAT_ID,
+    parse_mode: 'HTML',
+    disable_web_page_preview: true,
+    text
+  });
+}
+
+async function tg(env, method, body) {
+  const response = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_TOKEN}/${method}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      chat_id: env.TELEGRAM_CHAT_ID,
-      parse_mode: 'HTML',
-      disable_web_page_preview: true,
-      text
-    })
+    body: JSON.stringify(body)
   });
 
   if (!response.ok) {
-    throw new Error(`Telegram ответил ${response.status}`);
+    throw new Error(`Telegram ответил ${response.status} на ${method}`);
   }
+  return response;
+}
+
+/* ------------------------------------------------- переписка через бота */
+
+/**
+ * Всё, что пишут боту, приходит сюда. Три случая: его собственный ответ,
+ * первое «Начать» по ссылке с метки сайта и обычное сообщение от человека.
+ *
+ * Telegram повторяет обновление, пока не получит 200, поэтому мусор и свои
+ * же ошибки закрываем ответом «ok» — иначе он будет долбиться часами.
+ */
+async function telegramHook(request, env) {
+  if (request.method !== 'POST') return new Response('ok');
+  if (request.headers.get('X-Telegram-Bot-Api-Secret-Token') !== env.TG_HOOK_SECRET) {
+    return new Response('чужой запрос', { status: 403 });
+  }
+
+  let update;
+  try {
+    update = await request.json();
+  } catch {
+    return new Response('ok');
+  }
+
+  const message = update.message;
+  if (!message || !message.from) return new Response('ok');
+
+  try {
+    if (String(message.from.id) === String(env.TELEGRAM_CHAT_ID)) {
+      await sendAnswer(env, message);
+    } else if (typeof message.text === 'string' && message.text.startsWith('/start')) {
+      await greet(env, message);
+    } else {
+      await relay(env, message);
+    }
+  } catch (error) {
+    console.error('Бот не справился:', error.message);
+  }
+
+  return new Response('ok');
+}
+
+/** Первое касание: человек нажал «Начать» по ссылке t.me/<бот>?start=<метка>. */
+async function greet(env, message) {
+  const label = message.text.split(' ')[1] || '';
+  const source = SOURCES[label] || (label ? label : 'без метки');
+
+  await tg(env, 'sendMessage', {
+    chat_id: env.TELEGRAM_CHAT_ID,
+    parse_mode: 'HTML',
+    text: `🆕 <b>Пришёл с работы «${escapeHtml(source)}»</b>\n${who(message.from)}\n\nОтвечайте свайпом на это сообщение — ответ уйдёт ему.`
+  });
+
+  await tg(env, 'sendMessage', {
+    chat_id: message.chat.id,
+    text: 'Здравствуйте! Напишите, что за заведение и какой нужен сайт — отвечу здесь же.'
+  });
+}
+
+/** Обычное сообщение от человека. Уходит ему в чат с ботом, а не в личку. */
+async function relay(env, message) {
+  const head = `💬 ${who(message.from)}`;
+
+  if (typeof message.text === 'string') {
+    await tg(env, 'sendMessage', {
+      chat_id: env.TELEGRAM_CHAT_ID,
+      parse_mode: 'HTML',
+      text: `${head}\n\n${escapeHtml(message.text)}`
+    });
+    return;
+  }
+
+  // ponytail: фото и файлы уходят вторым сообщением, и ответить свайпом
+  // можно только на подпись — в самой копии номера отправителя нет.
+  // Понадобится ответ прямо с файла — хранить пару «сообщение → id» в KV.
+  await tg(env, 'sendMessage', {
+    chat_id: env.TELEGRAM_CHAT_ID,
+    parse_mode: 'HTML',
+    text: `${head}\n\nПрислал вложение, оно ниже. Отвечать свайпом на эту подпись.`
+  });
+  await tg(env, 'copyMessage', {
+    chat_id: env.TELEGRAM_CHAT_ID,
+    from_chat_id: message.chat.id,
+    message_id: message.message_id
+  });
+}
+
+/** Его ответ. Кому — берём из номера в сообщении, на которое он свайпнул. */
+async function sendAnswer(env, message) {
+  const quoted = message.reply_to_message;
+  const found = quoted && (quoted.text || quoted.caption || '').match(/#id(\d+)/);
+
+  if (!found) {
+    await tg(env, 'sendMessage', {
+      chat_id: env.TELEGRAM_CHAT_ID,
+      text: 'Кому отвечать — непонятно. Свайпните ответом на сообщение, где стоит #id.'
+    });
+    return;
+  }
+
+  await tg(env, 'copyMessage', {
+    chat_id: found[1],
+    from_chat_id: message.chat.id,
+    message_id: message.message_id
+  });
+}
+
+/** Подпись отправителя. Номер в ней — то, по чему находится адресат ответа. */
+function who(user) {
+  const name = [user.first_name, user.last_name].filter(Boolean).join(' ') || 'без имени';
+  const nick = user.username ? ` · @${user.username}` : '';
+  return `<b>${escapeHtml(name)}</b>${escapeHtml(nick)}\n#id${user.id}`;
 }
 
 async function sendEmail(env, { name, email, phone, message, meta }) {
