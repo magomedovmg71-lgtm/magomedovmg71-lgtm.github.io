@@ -55,7 +55,7 @@ window.MagaI18n = (function () {
     'hero.m1': 'Web Development',
     'hero.m2': 'UI',
     'hero.m3': 'Performance',
-    'hero.r1': '04 — selected projects',
+    'hero.r1': '03 — selected projects',
     'hero.scroll': 'Scroll',
 
     /* Section labels */
@@ -109,17 +109,6 @@ window.MagaI18n = (function () {
     'p2.alt3': 'Mobile version of the SHAFRAN restaurant website on a phone screen',
     'p2.alt4': 'Interior and food gallery on the SHAFRAN restaurant website',
 
-    /* Project 04 — ATLAS */
-    'p3.cat': 'Architecture / Studio',
-    'p3.open': 'Open the ATLAS ARCHITECTS website in a new tab',
-    'p3.desc': 'A premium website for an architecture studio, designed and built from scratch.',
-    'p3.drawing': 'Drawing',
-    'p3.building': 'Building',
-    'p3.cap1': 'Editorial project grid',
-    'p3.alt1': 'ATLAS ARCHITECTS homepage with a large architectural photograph and headline',
-    'p3.alt2': 'Comparison slider on the ATLAS ARCHITECTS website: an architectural drawing on the left, the finished building on the right',
-    'p3.alt3': 'Project grid on the ATLAS ARCHITECTS website with large architectural photography',
-    'p3.alt4': 'Mobile version of the ATLAS ARCHITECTS website on a smartphone screen',
 
     /* About */
     'about.title': 'Building websites,<br>not templates.',
@@ -184,7 +173,6 @@ window.MagaI18n = (function () {
     'footer.menu': 'Menu',
     'footer.links': 'Elsewhere',
     'footer.email': 'Email',
-    'footer.code': 'Atlas source <span aria-hidden="true">↗</span>',
     'footer.by': 'Designed &amp; built by MAGOMEDOV.WEB',
 
     /* Case studies — shared headings */
@@ -212,15 +200,6 @@ window.MagaI18n = (function () {
     'c2.tech': '<li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>WebP + srcset</li><li>Self-hosted variable fonts</li><li>GitHub Pages</li>',
     'c2.s6': 'The site is published on GitHub Pages. Images are served as WebP in several sizes and the fonts are self-hosted as latin + cyrillic subsets, so the page stays light despite the amount of photography.',
 
-    /* Case 03 — ATLAS */
-    'c3.lead': 'A premium website for an architecture studio, designed and built from scratch.',
-    'c3.s1': 'A website for an architecture studio — a long read covering the studio, its projects, services, process and team. A bilingual RU / EN interface, a monochrome palette and a strict grid.',
-    'c3.s2': 'Architecture is sold by the image, not the copy. The interface must not compete with the photography — while still holding a long page together and working in two languages.',
-    'c3.s3': 'An editorial grid, plenty of air, restrained motion. The central idea is the “Drawing → Building” slider: the visitor turns the project from a drawing into a finished building.',
-    'c3.feat': '<li>Bilingual RU / EN interface</li><li>“Drawing → Building” slider</li><li>Animated statistics</li><li>FAQ accordion with correct keyboard behaviour</li>',
-    'c3.moreLabel': 'Full list of technical features',
-    'c3.more': '<li>Responsive layout and mobile navigation</li><li>Smooth scrolling and keyboard navigation</li><li>prefers-reduced-motion support</li><li>Accessibility: aria attributes, focus states, contrast</li><li>SEO: meta tags, Open Graph, Schema.org</li><li>sitemap.xml and robots.txt</li><li>Image optimisation for different screens</li>',
-    'c3.s6': 'The site is published and its source code is open on GitHub. It is the most editorial and the most technically complete of the three: two languages, an interactive slider and a full set of SEO and accessibility work.',
 
     /* Runtime strings */
     'meta.title': 'Web development in Makhachkala — MAGOMEDOV.WEB',

@@ -1033,8 +1033,7 @@ p { text-wrap: pretty; }
 }
 
 .strip__item img,
-.duo__item img,
-.compare-figure img {
+.duo__item img {
   width: 100%;
   border-radius: var(--r-md);
   border: 1px solid var(--line);
@@ -1091,50 +1090,6 @@ p { text-wrap: pretty; }
   margin-top: clamp(3rem, 6vw, 6rem);
 }
 
-/* Atlas editorial ---------------------------------------------------------- */
-.atlas-caption {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(1.25rem, 4vw, 4rem);
-  align-items: end;
-  margin-top: clamp(2rem, 4vw, 3.25rem);
-  padding-bottom: clamp(2rem, 4vw, 3rem);
-  border-bottom: 1px solid var(--line);
-}
-
-.atlas-caption .project__desc { margin-top: 0; }
-
-.compare-figure {
-  position: relative;
-  margin-top: clamp(2.5rem, 5vw, 4.5rem);
-}
-
-.compare-figure figcaption {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  margin-top: 1.1rem;
-  font-size: var(--fs-xs);
-  letter-spacing: var(--ls-label);
-  text-transform: uppercase;
-  color: var(--text-faint);
-}
-
-.compare-figure__l { color: var(--text-dim); }
-.compare-figure__r { color: var(--text); }
-.compare-figure__arrow { color: var(--accent); }
-
-.atlas-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(1.5rem, 4vw, 4rem);
-  align-items: end;
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-}
-
-.atlas-grid__actions { display: flex; justify-content: flex-start; }
-
-.facts--wide { margin-bottom: 0; }
 
 /* ==========================================================================
    9. ABOUT
@@ -1918,8 +1873,6 @@ p { text-wrap: pretty; }
 
   .project__body,
   .split,
-  .atlas-caption,
-  .atlas-grid,
   .about__grid,
   .contact__grid,
   .site-footer__top {
