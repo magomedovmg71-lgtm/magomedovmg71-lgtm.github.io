@@ -149,12 +149,20 @@
 </script>
 <!-- Yandex.Metrika counter -->
 <script>
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-  m[i].l=1*new Date();
-  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-  ym(112315744, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
+  window.ym = window.ym || function () { (window.ym.a = window.ym.a || []).push(arguments); };
+  // Counter and webvisor load after the page is painted; goals sent earlier wait in the queue above.
+  function loadMetrika() {
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112315744, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
+  }
+  window.addEventListener("load", function () {
+    if ("requestIdleCallback" in window) requestIdleCallback(loadMetrika, { timeout: 3000 });
+    else setTimeout(loadMetrika, 1500);
+  });
   document.addEventListener("click", function (e) {
     var a = e.target.closest && e.target.closest("a[href]");
     if (!a) return;
@@ -197,7 +205,7 @@
     </nav>
 
     <div class="site-header__side">
-      <button class="lang" id="lang-toggle" type="button" data-i18n-aria="a11y.lang" aria-label="Switch to English">
+      <button class="lang" id="lang-toggle" type="button" data-i18n-aria="a11y.lang" aria-label="RU / EN, switch to English">
         <span class="lang__opt is-current">RU</span><span class="lang__sep" aria-hidden="true">/</span><span class="lang__opt">EN</span>
       </button>
 
@@ -692,6 +700,16 @@
       </div>
 
       <nav class="site-footer__nav" data-i18n-aria="a11y.footerNav" aria-label="Навигация в подвале">
+        <div class="site-footer__col site-footer__col--services">
+          <p class="site-footer__label" data-i18n="footer.services">Услуги</p>
+          <ul>
+            <li><a href="/sayt-dlya-kafe/" data-i18n="svc.cafe">Сайт для кафе</a></li>
+            <li><a href="/sayt-dlya-barbershopa/" data-i18n="svc.barber">Сайт для барбершопа</a></li>
+            <li><a href="/sayt-dlya-restorana/" data-i18n="svc.restaurant">Сайт для ресторана</a></li>
+            <li><a href="/sayt-vizitka/" data-i18n="svc.card">Сайт-визитка</a></li>
+            <li><a href="/lending/" data-i18n="svc.landing">Лендинг</a></li>
+          </ul>
+        </div>
         <div class="site-footer__col">
           <p class="site-footer__label" data-i18n="footer.menu">Меню</p>
           <ul>

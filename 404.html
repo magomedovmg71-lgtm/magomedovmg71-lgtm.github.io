@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Страница не найдена | MAGOMEDOV.WEB</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  .nf { min-height: 100vh; display: grid; place-content: center; gap: 1.5rem; padding: 2rem 1.25rem; max-width: 40rem; margin-inline: auto; }
+  .nf h1 { font-size: clamp(2.2rem, 7vw, 4.5rem); line-height: 1.05; }
+  .nf p { color: var(--text-dim); }
+  .nf ul { display: grid; gap: .6rem; padding: 0; list-style: none; }
+  .nf a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+</style>
+<!-- Yandex.Metrika counter -->
+<script>
+  window.ym = window.ym || function () { (window.ym.a = window.ym.a || []).push(arguments); };
+  // Counter and webvisor load after the page is painted; goals sent earlier wait in the queue above.
+  function loadMetrika() {
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(112315744, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
+  }
+  window.addEventListener("load", function () {
+    if ("requestIdleCallback" in window) requestIdleCallback(loadMetrika, { timeout: 3000 });
+    else setTimeout(loadMetrika, 1500);
+  });
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a[href]");
+    if (!a) return;
+    var href = a.getAttribute("href");
+    var goal = /^tel:/.test(href) ? "click_phone" : /t\.me\//.test(href) ? "click_telegram" : /wa\.me\//.test(href) ? "click_whatsapp" : "";
+    if (goal) ym(112315744, "reachGoal", goal);
+  });
+</script>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<main class="nf">
+  <p>404</p>
+  <h1>Такой страницы нет</h1>
+  <p>Возможно, ссылка устарела. Вот что есть на сайте:</p>
+  <ul>
+    <li><a href="/">Главная: примеры сайтов и форма заявки</a></li>
+    <li><a href="/sayt-dlya-kafe/">Сайт для кафе</a></li>
+    <li><a href="/sayt-dlya-barbershopa/">Сайт для барбершопа</a></li>
+    <li><a href="/sayt-dlya-restorana/">Сайт для ресторана</a></li>
+    <li><a href="/sayt-vizitka/">Сайт-визитка</a></li>
+    <li><a href="/lending/">Лендинг</a></li>
+  </ul>
+</main>
+</body>
+</html>
