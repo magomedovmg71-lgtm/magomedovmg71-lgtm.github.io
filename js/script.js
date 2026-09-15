@@ -494,6 +494,7 @@
         return response.json().catch(function () { return { ok: response.ok }; });
       }).then(function (result) {
         if (!result || !result.ok) throw new Error(result && result.error);
+        if (typeof window.ym === 'function') window.ym(112315744, 'reachGoal', 'form_submit');
         form.reset();
         inputs.forEach(function (input) { setFieldState(input, ''); });
         setStatus(t('form.sent'), 'is-ok', [
