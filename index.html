@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Создание сайтов в Махачкале — MAGOMEDOV.WEB</title>
-<meta name="description" content="Магомед — веб-разработчик из Махачкалы. Создаю современные, быстрые и адаптивные сайты для бизнеса: лендинги, сайты-визитки, корпоративные сайты. Работаю с клиентами из любого города. Четыре проекта в портфолио.">
+<title>Создание сайтов для бизнеса по всей России | MAGOMEDOV.WEB</title>
+<meta name="description" content="Делаю сайты для бизнеса: сайт-визитка или сайт компании с дизайном, версией для телефона и формой заявок. Примеры: кофейня, барбершоп, ресторан.">
 <meta name="author" content="Магомед — MAGOMEDOV.WEB">
 <meta name="theme-color" content="#0a0a0a">
 <meta name="color-scheme" content="dark">
@@ -16,17 +16,19 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MAGOMEDOV.WEB">
 <meta property="og:locale" content="ru_RU">
-<meta property="og:title" content="Создание сайтов в Махачкале — MAGOMEDOV.WEB">
-<meta property="og:description" content="Магомед, веб-разработчик из Махачкалы. Современные, быстрые и адаптивные сайты для бизнеса. Проекты: НА РУКИ, УСТА, SHAFRAN.">
+<meta property="og:title" content="Создание сайтов для бизнеса | MAGOMEDOV.WEB">
+<meta property="og:description" content="Сайт-визитка или сайт компании: дизайн, версия для телефона, форма заявок. Примеры: сайты кофейни НА РУКИ, барбершопа УСТА и ресторана SHAFRAN.">
 <meta property="og:url" content="https://magomedov.website/">
 <meta property="og:image" content="https://magomedov.website/images/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="MAGOMEDOV.WEB — веб-разработка">
+<meta property="og:image:alt" content="Первый экран сайта MAGOMEDOV.WEB с заголовком «Сайты, с которыми бизнес выглядит дороже»">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Создание сайтов в Махачкале — MAGOMEDOV.WEB">
-<meta name="twitter:description" content="Магомед, веб-разработчик из Махачкалы. Современные, быстрые и адаптивные сайты для бизнеса.">
+<meta name="twitter:title" content="Создание сайтов для бизнеса | MAGOMEDOV.WEB">
+<meta name="twitter:description" content="Сайт-визитка или сайт компании: дизайн, версия для телефона, форма заявок. Примеры: кофейня, барбершоп, ресторан.">
 <meta name="twitter:image" content="https://magomedov.website/images/og-image.jpg">
+<meta name="twitter:image:alt" content="Первый экран сайта MAGOMEDOV.WEB с заголовком «Сайты, с которыми бизнес выглядит дороже»">
 
 <!-- Icons -->
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
@@ -47,17 +49,49 @@
       "@id": "https://magomedov.website/#website",
       "url": "https://magomedov.website/",
       "name": "MAGOMEDOV.WEB",
-      "description": "Веб-разработка современных сайтов для бизнеса",
+      "description": "Создание сайтов для бизнеса",
       "inLanguage": ["ru-RU", "en"],
       "publisher": { "@id": "https://magomedov.website/#person" }
     },
     {
+      "@type": "ProfessionalService",
+      "@id": "https://magomedov.website/#service",
+      "name": "MAGOMEDOV.WEB",
+      "description": "Создание сайтов для бизнеса: сайт-визитка или сайт компании с дизайном, версией для телефона и формой заявок.",
+      "url": "https://magomedov.website/",
+      "image": "https://magomedov.website/images/og-image.jpg",
+      "telephone": "+79226765715",
+      "email": "magomedovmg71@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Махачкала",
+        "addressRegion": "Республика Дагестан",
+        "addressCountry": "RU"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Россия" },
+        { "@type": "City", "name": "Махачкала" }
+      ],
+      "founder": { "@id": "https://magomedov.website/#person" },
+      "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Создание сайтов для бизнеса",
+          "serviceType": "Создание сайтов",
+          "description": "Сайт-визитка или сайт компании на HTML, CSS и JavaScript: дизайн, версия для телефона, форма заявок, разметка для поисковиков.",
+          "provider": { "@id": "https://magomedov.website/#service" },
+          "areaServed": { "@type": "Country", "name": "Россия" }
+        }
+      }
+    },
+    {
       "@type": "Person",
       "@id": "https://magomedov.website/#person",
-      "name": "MAGOMEDOV.WEB",
-      "alternateName": "Магомед",
+      "name": "Магомед",
       "givenName": "Магомед",
       "jobTitle": "Веб-разработчик",
+      "worksFor": { "@id": "https://magomedov.website/#service" },
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Махачкала",
@@ -68,24 +102,11 @@
       "telephone": "+79226765715",
       "url": "https://magomedov.website/",
       "knowsAbout": ["HTML5", "CSS3", "JavaScript", "Responsive Design", "UI Development", "Web Performance", "Accessibility", "SEO"],
-      "knowsLanguage": ["ru", "en"],
-      "makesOffer": {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Разработка сайтов для бизнеса",
-          "serviceType": "Веб-разработка",
-          "description": "Дизайн и вёрстка адаптивных сайтов: лендинги, сайты-визитки и корпоративные сайты на HTML, CSS и JavaScript.",
-          "areaServed": [
-            { "@type": "City", "name": "Махачкала" },
-            { "@type": "Country", "name": "Россия" }
-          ]
-        }
-      }
+      "knowsLanguage": ["ru", "en"]
     },
     {
       "@type": "ItemList",
-      "name": "Избранные работы",
+      "name": "Примеры сайтов",
       "itemListOrder": "https://schema.org/ItemListOrderAscending",
       "itemListElement": [
         {
@@ -200,18 +221,18 @@
 
       <p class="hero__eyebrow" data-reveal>
         <span class="status-dot" aria-hidden="true"></span>
-        <span data-i18n="hero.eyebrow">Веб-разработка — доступен для новых проектов</span>
+        <span data-i18n="hero.eyebrow">Веб-разработчик - беру новые заказы</span>
       </p>
 
       <h1 class="hero__title" id="hero-title">
-        <span class="line" data-reveal="line" data-reveal-delay="1"><span class="line__in" data-i18n="hero.l1">Сайты, с которыми</span></span>
-        <span class="line" data-reveal="line" data-reveal-delay="2"><span class="line__in" data-i18n="hero.l2">бизнес выглядит</span></span>
-        <span class="line" data-reveal="line" data-reveal-delay="3"><span class="line__in" data-i18n="hero.l3"><em>дороже.</em></span></span>
+        <span class="line" data-reveal="line" data-reveal-delay="1"><span class="line__in" data-i18n="hero.l1">Создаю сайты,</span></span>
+        <span class="line" data-reveal="line" data-reveal-delay="2"><span class="line__in" data-i18n="hero.l2">с которыми бизнес</span></span>
+        <span class="line" data-reveal="line" data-reveal-delay="3"><span class="line__in" data-i18n="hero.l3">выглядит <em>дороже.</em></span></span>
       </h1>
 
       <div class="hero__bottom">
         <p class="hero__lead" data-reveal data-reveal-delay="4" data-i18n="hero.lead">
-          Создаю современные, быстрые и адаптивные сайты для бизнеса.
+          Сайт-визитка или сайт компании: дизайн, версия для телефона и форма заявок.
         </p>
 
         <div class="hero__actions" data-reveal data-reveal-delay="5">
@@ -227,7 +248,7 @@
       </p>
 
       <div class="hero__rule" data-reveal data-reveal-delay="7">
-        <span class="hero__rule-item" data-i18n="hero.r1">03 — избранных проекта</span>
+        <span class="hero__rule-item" data-i18n="hero.r1">03 - избранных проекта</span>
         <span class="hero__rule-item">HTML · CSS · JavaScript</span>
         <a class="hero__rule-item hero__scroll" href="#work">
           <span data-i18n="hero.scroll">Листайте</span> <span aria-hidden="true">↓</span>
@@ -241,8 +262,8 @@
     <div class="container">
       <header class="section-head">
         <p class="section-index"><span class="section-index__num">01</span> <span data-i18n="sec.work">Работы</span></p>
-        <h2 class="section-title" id="work-title" data-reveal data-i18n="work.title">Избранные работы</h2>
-        <p class="section-sub" data-reveal data-reveal-delay="1" data-i18n="work.sub">Четыре проекта, которые показывают мой подход к дизайну и разработке.</p>
+        <h2 class="section-title" id="work-title" data-reveal data-i18n="work.title">Примеры сайтов</h2>
+        <p class="section-sub" data-reveal data-reveal-delay="1" data-i18n="work.sub">Сайты кофейни, барбершопа и ресторана. Каждый можно открыть и проверить.</p>
       </header>
     </div>
 
@@ -276,7 +297,7 @@
           <div class="project__headline">
             <h3 class="project__title" id="p0-title" data-reveal>НА РУКИ</h3>
             <p class="project__desc" data-reveal data-reveal-delay="1" data-i18n="p0.desc">
-              Кофейня со стритфудом: меню на 22 позиции с фильтром, корзина и оформление в три шага — доставка, самовывоз или зал. Сумма доставки считается по району, стол бронируется конкретный, а не «где-нибудь». Комбо-завтрак собирается из двух блюд, скидка считается сама и включается по часам.
+              Кофейня со стритфудом: меню на 22 позиции с фильтром, корзина и оформление в три шага - доставка, самовывоз или зал. Сумма доставки считается по району, стол бронируется конкретный, а не «где-нибудь». Комбо-завтрак собирается из двух блюд, скидка считается сама и включается по часам.
             </p>
           </div>
 
@@ -302,7 +323,7 @@
           </figure>
           <figure class="strip__item">
             <img src="images/naruki-combo.jpg"
-                 sizes="(max-width: 800px) 100vw, 35vw" width="1240" height="753" loading="lazy" decoding="async"
+                 width="1240" height="753" loading="lazy" decoding="async"
                  data-i18n-alt="p0.alt4"
                  alt="Блок комбо на сайте НА РУКИ: выбор завтрака и кофе, цена 490 ₽ вместо 680 ₽">
             <figcaption data-i18n="p0.cap2">Комбо: выбор пары и скидка в корзине</figcaption>
@@ -457,7 +478,7 @@
       </header>
 
       <div class="about__grid">
-        <h2 class="about__title" id="about-title" data-reveal data-i18n="about.title">Делаю сайты,<br>а не шаблоны.</h2>
+        <h2 class="about__title" id="about-title" data-reveal data-i18n="about.title">Сайт с нуля,<br>без шаблонов.</h2>
         <div class="about__text">
           <p data-reveal data-reveal-delay="1" data-i18n="about.p1">
             Меня зовут Магомед, я веб-разработчик из Махачкалы. Создаю сайты, которые выглядят
@@ -465,7 +486,7 @@
           </p>
           <p class="about__note" data-reveal data-reveal-delay="2" data-i18n="about.p2">
             Каждый проект пишу вручную: без конструкторов и тяжёлых шаблонов.
-            Работаю с клиентами из любого города — всё общение онлайн.
+            Работаю с клиентами из любого города России, всё общение онлайн.
           </p>
         </div>
       </div>
@@ -507,7 +528,7 @@
     <div class="container">
       <header class="section-head">
         <p class="section-index"><span class="section-index__num">03</span> <span data-i18n="sec.process">Процесс</span></p>
-        <h2 class="section-title" id="process-title" data-reveal data-i18n="process.title">Как я работаю</h2>
+        <h2 class="section-title" id="process-title" data-reveal data-i18n="process.title">Как я делаю сайт</h2>
       </header>
 
       <ol class="steps">
@@ -536,7 +557,7 @@
           <span class="step__num">04</span>
           <div class="step__body">
             <h3 class="step__title" data-i18n="step.4t">Тестирование</h3>
-            <p class="step__text" data-i18n="step.4d">Проверяю мобильную версию, скорость, accessibility и корректность работы.</p>
+            <p class="step__text" data-i18n="step.4d">Проверяю версию для телефона, скорость загрузки и работу форм и кнопок.</p>
           </div>
         </li>
         <li class="step" data-reveal>
@@ -588,7 +609,7 @@
       <div class="contact__hero">
         <h2 class="contact__title" id="contact-title" data-reveal data-i18n="contact.title">Нужен сайт<br>для бизнеса?</h2>
         <p class="contact__sub" data-reveal data-reveal-delay="1" data-i18n="contact.sub">
-          Расскажите о своей задаче — обсудим, какой сайт подойдёт вашему бизнесу.
+          Расскажите о своей задаче - обсудим, какой сайт подойдёт вашему бизнесу.
         </p>
         <a class="btn btn--solid btn--lg" href="#contact-form" data-reveal data-reveal-delay="2">
           <span data-i18n="cta.start">Начать проект</span> <span class="btn__arrow" aria-hidden="true">→</span>
@@ -612,7 +633,7 @@
 
         <form class="form" id="contact-form" novalidate>
           <p class="form__notice" role="note" data-i18n="form.notice">
-            Отвечаю в течение рабочего дня. Если удобнее в мессенджере —
+            Отвечаю в течение рабочего дня. Если удобнее в мессенджере,
             напишите в <strong>Telegram</strong> или <strong>WhatsApp</strong>.
           </p>
 
@@ -667,7 +688,7 @@
     <div class="site-footer__top">
       <div class="site-footer__brand">
         <p class="wordmark wordmark--lg"><span class="wordmark__main">MAGOMEDOV</span><span class="wordmark__accent">.WEB</span></p>
-        <p class="site-footer__tagline" data-i18n="footer.tagline">Веб-разработка и цифровые продукты.</p>
+        <p class="site-footer__tagline" data-i18n="footer.tagline">Создание сайтов для бизнеса.</p>
       </div>
 
       <nav class="site-footer__nav" data-i18n-aria="a11y.footerNav" aria-label="Навигация в подвале">
@@ -694,7 +715,7 @@
 
     <div class="site-footer__bottom">
       <p>&copy; <span id="year">2026</span> MAGOMEDOV.WEB</p>
-      <p data-i18n="footer.by">Дизайн и разработка — MAGOMEDOV.WEB</p>
+      <p data-i18n="footer.by">Дизайн и разработка - MAGOMEDOV.WEB</p>
     </div>
   </div>
 </footer>
@@ -705,7 +726,7 @@
     <button class="case__close" type="button" data-case-close data-i18n-aria="a11y.caseClose" aria-label="Закрыть кейс"><span aria-hidden="true">✕</span></button>
     <div class="case__scroll" tabindex="-1">
       <header class="case__head">
-        <p class="case__cat"><span data-i18n="p1.cat">Барбершоп / Услуги</span> — 2026</p>
+        <p class="case__cat"><span data-i18n="p1.cat">Барбершоп / Услуги</span> - 2026</p>
         <h2 class="case__title" id="case-usta-title">УСТА</h2>
         <p class="case__lead" data-i18n="c1.lead">Сайт барбершопа: прайс, мастера, галерея работ и запись онлайн. Тёмная подача, латунный акцент, плавная прокрутка без библиотек.</p>
         <div class="case__actions">
@@ -721,7 +742,7 @@
         <p class="case__num">01</p>
         <div class="case__content">
           <h3 data-i18n="case.h1">Проект</h3>
-          <p data-i18n="c1.s1">Одностраничный сайт барбершопа. Задача — довести посетителя до записи. Тёмная база, латунь как единственный акцент, крупная типографика вывесочного шрифта.</p>
+          <p data-i18n="c1.s1">Одностраничный сайт барбершопа. Задача - довести посетителя до записи. Тёмная база, латунь как единственный акцент, крупная типографика вывесочного шрифта.</p>
         </div>
       </div>
 
@@ -737,7 +758,7 @@
         <p class="case__num">03</p>
         <div class="case__content">
           <h3 data-i18n="case.h3">Подход</h3>
-          <p data-i18n="c1.s3">Порядок экранов повторяет путь гостя: цены → мастера → работы → запись. Прайс набран строками с точками, как в старой парикмахерской, — читается за секунду.</p>
+          <p data-i18n="c1.s3">Порядок экранов повторяет путь гостя: цены → мастера → работы → запись. Прайс набран строками с точками, как в старой парикмахерской, и читается за секунду.</p>
         </div>
       </div>
 
@@ -776,7 +797,7 @@
         <p class="case__num">06</p>
         <div class="case__content">
           <h3 data-i18n="case.h6">Результат</h3>
-          <p data-i18n="c1.s6">Страница готова к работе за 40 мс, своих файлов всего два, ни одной внешней библиотеки. Прокрутка идёт целыми пикселями и не дрожит на затухании — проверено замером.</p>
+          <p data-i18n="c1.s6">Страница готова к работе за 40 мс, своих файлов всего два, ни одной внешней библиотеки. Прокрутка идёт целыми пикселями и не дрожит на затухании: проверено замером.</p>
           <div class="case__actions">
             <a class="btn btn--solid btn--sm" href="https://magomedov.website/usta/" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.live">Открыть сайт</span> <span aria-hidden="true">↗</span></a>
           </div>
@@ -791,7 +812,7 @@
     <button class="case__close" type="button" data-case-close data-i18n-aria="a11y.caseClose" aria-label="Закрыть кейс"><span aria-hidden="true">✕</span></button>
     <div class="case__scroll" tabindex="-1">
       <header class="case__head">
-        <p class="case__cat"><span data-i18n="p2.cat">Ресторан / Гостеприимство</span> — 2026</p>
+        <p class="case__cat"><span data-i18n="p2.cat">Ресторан / Гостеприимство</span> - 2026</p>
         <h2 class="case__title" id="case-shafran-title">SHAFRAN</h2>
         <p class="case__lead" data-i18n="c2.lead">Современный сайт ресторана с акцентом на атмосферу, меню, фотографии и бронирование.</p>
         <div class="case__actions">
@@ -815,7 +836,7 @@
         <p class="case__num">02</p>
         <div class="case__content">
           <h3 data-i18n="case.h2">Задача</h3>
-          <p data-i18n="c2.s2">У сайта ресторана два разных посетителя: один хочет понять, что это за место, второй — быстро забронировать столик. Нужно было решить обе задачи, не потеряв атмосферу.</p>
+          <p data-i18n="c2.s2">У сайта ресторана два разных посетителя: один хочет понять, что это за место, второй - быстро забронировать столик. Нужно было решить обе задачи, не потеряв атмосферу.</p>
         </div>
       </div>
 
@@ -823,7 +844,7 @@
         <p class="case__num">03</p>
         <div class="case__content">
           <h3 data-i18n="case.h3">Подход</h3>
-          <p data-i18n="c2.s3">Атмосферу держат крупные фотографии и спокойная типографика, а действие — кнопка бронирования, доступная из шапки на любом экране. Меню разбито по категориям, чтобы его было удобно листать с телефона.</p>
+          <p data-i18n="c2.s3">Атмосферу держат крупные фотографии и спокойная типографика, а действие - кнопка бронирования, доступная из шапки на любом экране. Меню разбито по категориям, чтобы его было удобно листать с телефона.</p>
         </div>
       </div>
 
@@ -858,7 +879,7 @@
         <p class="case__num">06</p>
         <div class="case__content">
           <h3 data-i18n="case.h6">Результат</h3>
-          <p data-i18n="c2.s6">Сайт опубликован на GitHub Pages. Изображения отдаются в WebP в нескольких размерах, шрифты подключены локально подмножествами latin + cyrillic — страница остаётся лёгкой даже при большом количестве фотографий.</p>
+          <p data-i18n="c2.s6">Сайт опубликован на GitHub Pages. Изображения отдаются в WebP в нескольких размерах, шрифты подключены локально подмножествами latin + cyrillic, поэтому страница остаётся лёгкой даже при большом количестве фотографий.</p>
           <div class="case__actions">
             <a class="btn btn--solid btn--sm" href="https://magomedov.website/shafran/" target="_blank" rel="noopener noreferrer"><span data-i18n="cta.live">Открыть сайт</span> <span aria-hidden="true">↗</span></a>
           </div>

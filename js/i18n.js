@@ -47,11 +47,11 @@ window.MagaI18n = (function () {
     'cta.start': 'Start a project',
 
     /* Hero */
-    'hero.eyebrow': 'Web development — available for new projects',
+    'hero.eyebrow': 'Web developer - open for new projects',
     'hero.l1': 'Websites that',
     'hero.l2': 'make businesses',
     'hero.l3': 'look <em>better.</em>',
-    'hero.lead': 'I build modern, fast and responsive websites for business.',
+    'hero.lead': 'A business-card site or a company site: design, a mobile version and a request form.',
     'hero.m1': 'Web Development',
     'hero.m2': 'UI',
     'hero.m3': 'Performance',
@@ -66,8 +66,8 @@ window.MagaI18n = (function () {
     'sec.why': 'Why',
     'sec.contact': 'Contact',
 
-    'work.title': 'Selected work',
-    'work.sub': 'Four projects that show how I approach design and development.',
+    'work.title': 'Website examples',
+    'work.sub': 'Websites for a coffee shop, a barbershop and a restaurant. Each one is live.',
 
     /* Shared facts */
     'fact.role': 'Role',
@@ -111,9 +111,9 @@ window.MagaI18n = (function () {
 
 
     /* About */
-    'about.title': 'Building websites,<br>not templates.',
+    'about.title': 'Built from scratch,<br>no templates.',
     'about.p1': 'My name is Magomed, I am a web developer based in Makhachkala. I build websites that look current, load fast and work equally well on desktop, tablet and phone.',
-    'about.p2': 'Every project is written by hand — no page builders, no heavy templates. I work with clients from any city, entirely online.',
+    'about.p2': 'Every project is written by hand — no page builders, no heavy templates. I work with clients from any city in Russia, entirely online.',
     'trait.1': 'Responsive',
     'trait.2': 'Fast',
     'trait.3': 'SEO-ready',
@@ -135,7 +135,7 @@ window.MagaI18n = (function () {
     'cap.t10': 'Keyboard · contrast · ARIA',
 
     /* Process */
-    'process.title': 'How I work',
+    'process.title': 'How I build a website',
     'step.1t': 'Discussion',
     'step.1d': 'I get to know the task, the business and the goals of the project.',
     'step.2t': 'Design',
@@ -143,7 +143,7 @@ window.MagaI18n = (function () {
     'step.3t': 'Development',
     'step.3d': 'I build the responsive site and its interactive elements.',
     'step.4t': 'Testing',
-    'step.4d': 'I check the mobile version, speed, accessibility and that everything works.',
+    'step.4d': 'I check the mobile version, loading speed, and that forms and buttons work.',
     'step.5t': 'Launch',
     'step.5d': 'I prepare the site for publication.',
 
@@ -169,7 +169,7 @@ window.MagaI18n = (function () {
     'form.send': 'Send message',
 
     /* Footer */
-    'footer.tagline': 'Web development &amp; digital experiences.',
+    'footer.tagline': 'Websites for business.',
     'footer.menu': 'Menu',
     'footer.links': 'Elsewhere',
     'footer.email': 'Email',
@@ -202,8 +202,8 @@ window.MagaI18n = (function () {
 
 
     /* Runtime strings */
-    'meta.title': 'Web development in Makhachkala — MAGOMEDOV.WEB',
-    'meta.description': 'Magomed, a web developer based in Makhachkala. Modern, fast and responsive websites for business: landing pages, one-pagers and corporate sites. Working with clients from any city. Three real projects in the portfolio.',
+    'meta.title': 'Websites for business across Russia | MAGOMEDOV.WEB',
+    'meta.description': 'I build websites for business: a business-card site or a company site with design, a mobile version and a request form. Examples: a coffee shop, a barbershop, a restaurant.',
     'a11y.menuOpen': 'Open menu',
     'a11y.menuClose': 'Close menu',
     'a11y.lang': 'Переключить на русский',
@@ -232,8 +232,8 @@ window.MagaI18n = (function () {
 
   /* Runtime strings that are not present anywhere in the markup. */
   var RU = {
-    'meta.title': 'Создание сайтов в Махачкале — MAGOMEDOV.WEB',
-    'meta.description': 'Магомед — веб-разработчик из Махачкалы. Создаю современные, быстрые и адаптивные сайты для бизнеса: лендинги, сайты-визитки, корпоративные сайты. Работаю с клиентами из любого города. Три реальных проекта в портфолио.',
+    'meta.title': 'Создание сайтов для бизнеса по всей России | MAGOMEDOV.WEB',
+    'meta.description': 'Делаю сайты для бизнеса: сайт-визитка или сайт компании с дизайном, версией для телефона и формой заявок. Примеры: кофейня, барбершоп, ресторан.',
     'a11y.menuOpen': 'Открыть меню',
     'a11y.menuClose': 'Закрыть меню',
     'a11y.lang': 'Switch to English',
