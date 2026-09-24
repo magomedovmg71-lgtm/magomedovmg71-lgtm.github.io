@@ -67,6 +67,9 @@ window.MagaI18n = (function () {
     'sec.contact': 'Contact',
 
     'work.title': 'Website examples',
+    'wl.naruki': 'Coffee shop & street food',
+    'wl.usta': 'Barbershop',
+    'wl.shafran': 'Restaurant',
     'work.sub': 'Websites for a coffee shop, a barbershop and a restaurant. Each one is live.',
 
     /* Shared facts */

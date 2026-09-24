@@ -2083,3 +2083,44 @@ p { text-wrap: pretty; }
   .site-footer__nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .site-footer__col--services { grid-column: 1 / -1; }
 }
+
+/* ==========================================================================
+   20. WORKLIST — витрина проектов в начале секции «Работы»
+   ========================================================================== */
+.worklist {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.75rem);
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+  padding: 0;
+  list-style: none;
+}
+
+.worklist__card {
+  display: grid;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color var(--t-fast) var(--ease);
+}
+
+.worklist__card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: opacity var(--t-fast) var(--ease);
+}
+
+.worklist__meta { display: grid; gap: 0.15rem; }
+.worklist__name { font-weight: 600; letter-spacing: 0.02em; }
+.worklist__cat { color: var(--text-dim); font-size: 0.9rem; }
+.worklist__go { color: var(--accent); font-size: 0.9rem; }
+.worklist__card:hover { border-color: var(--accent); }
+.worklist__card:hover img { opacity: 0.85; }
+
+@media (max-width: 760px) {
+  .worklist { grid-template-columns: 1fr; }
+}
