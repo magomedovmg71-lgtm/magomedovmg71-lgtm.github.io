@@ -190,8 +190,8 @@
     <nav class="nav" id="nav" data-i18n-aria="a11y.nav" aria-label="Основная навигация">
       <ul class="nav__list">
         <li><a class="nav__link" href="#work"><span class="nav__idx">01</span><span data-i18n="nav.work">Проекты</span></a></li>
-        <li><a class="nav__link" href="#about"><span class="nav__idx">02</span><span data-i18n="nav.about">О себе</span></a></li>
-        <li><a class="nav__link" href="#process"><span class="nav__idx">03</span><span data-i18n="nav.process">Процесс</span></a></li>
+        <li><a class="nav__link" href="#process"><span class="nav__idx">02</span><span data-i18n="nav.process">Процесс</span></a></li>
+        <li><a class="nav__link" href="#about"><span class="nav__idx">03</span><span data-i18n="nav.about">О себе</span></a></li>
         <li><a class="nav__link" href="#contact"><span class="nav__idx">04</span><span data-i18n="nav.contact">Контакты</span></a></li>
       </ul>
       <div class="nav__foot">
@@ -496,10 +496,71 @@
   </section>
 
   <!-- ============================================================ ABOUT -->
+  <section class="section process" id="process" aria-labelledby="process-title">
+    <div class="container">
+      <header class="section-head">
+        <p class="section-index"><span class="section-index__num">02</span> <span data-i18n="sec.process">Процесс</span></p>
+        <h2 class="section-title" id="process-title" data-reveal data-i18n="process.title">Как я делаю сайт</h2>
+        <p class="section-sub" data-reveal data-reveal-delay="1" data-i18n="process.sub">Дизайн рисую сам. Если у вас есть свой дизайнер или готовый макет - соберу сайт по нему.</p>
+      </header>
+
+      <ol class="steps">
+        <li class="step" data-reveal>
+          <span class="step__num">01</span>
+          <div class="step__body">
+            <h3 class="step__title" data-i18n="step.1t">Обсуждение</h3>
+            <p class="step__text" data-i18n="step.1d">Спрашиваю про ваше дело: чем занимаетесь, кто клиенты, что должно быть на сайте.</p>
+          </div>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num">02</span>
+          <div class="step__body">
+            <h3 class="step__title" data-i18n="step.2t">Дизайн</h3>
+            <p class="step__text" data-i18n="step.2d">Рисую, как сайт будет выглядеть, и показываю первый экран. Есть свой макет - работаю по нему.</p>
+          </div>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num">03</span>
+          <div class="step__body">
+            <h3 class="step__title" data-i18n="step.3t">Сборка</h3>
+            <p class="step__text" data-i18n="step.3d">Собираю сайт: тексты, фото, форма заявки, кнопки звонка и мессенджеров.</p>
+          </div>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num">04</span>
+          <div class="step__body">
+            <h3 class="step__title" data-i18n="step.4t">Проверка</h3>
+            <p class="step__text" data-i18n="step.4d">Проверяю на телефоне и компьютере: кнопки, формы, скорость загрузки.</p>
+          </div>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num">05</span>
+          <div class="step__body">
+            <h3 class="step__title" data-i18n="step.5t">Запуск</h3>
+            <p class="step__text" data-i18n="step.5d">Выкладываю сайт в интернет, подключаю адрес и счётчик, чтобы вы видели заявки.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section cta-strip" aria-label="Связаться">
+    <div class="container">
+      <div class="cta-strip__box" data-reveal>
+        <p class="cta-strip__title" data-i18n="cta.stripTitle">Расскажите про своё дело - отвечу в течение рабочего дня</p>
+        <div class="cta-strip__actions">
+          <a class="btn btn--solid" href="#contact" data-i18n="cta.stripForm">Оставить заявку</a>
+          <a class="btn btn--ghost" href="https://t.me/magadev_leads_bot?start=site" target="_blank" rel="noopener noreferrer">Telegram <span aria-hidden="true">↗</span></a>
+          <a class="btn btn--ghost" href="tel:+79226765715">+7 922 676-57-15</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section about" id="about" aria-labelledby="about-title">
     <div class="container">
       <header class="section-head">
-        <p class="section-index"><span class="section-index__num">02</span> <span data-i18n="sec.about">О себе</span></p>
+        <p class="section-index"><span class="section-index__num">03</span> <span data-i18n="sec.about">О себе</span></p>
       </header>
 
       <div class="about__grid">
@@ -549,52 +610,6 @@
   </section>
 
   <!-- ============================================================ PROCESS -->
-  <section class="section process" id="process" aria-labelledby="process-title">
-    <div class="container">
-      <header class="section-head">
-        <p class="section-index"><span class="section-index__num">03</span> <span data-i18n="sec.process">Процесс</span></p>
-        <h2 class="section-title" id="process-title" data-reveal data-i18n="process.title">Как я делаю сайт</h2>
-      </header>
-
-      <ol class="steps">
-        <li class="step" data-reveal>
-          <span class="step__num">01</span>
-          <div class="step__body">
-            <h3 class="step__title" data-i18n="step.1t">Обсуждение</h3>
-            <p class="step__text" data-i18n="step.1d">Понимаю задачу, бизнес и цели проекта.</p>
-          </div>
-        </li>
-        <li class="step" data-reveal>
-          <span class="step__num">02</span>
-          <div class="step__body">
-            <h3 class="step__title" data-i18n="step.2t">Дизайн</h3>
-            <p class="step__text" data-i18n="step.2d">Продумываю структуру, композицию и визуальный стиль.</p>
-          </div>
-        </li>
-        <li class="step" data-reveal>
-          <span class="step__num">03</span>
-          <div class="step__body">
-            <h3 class="step__title" data-i18n="step.3t">Разработка</h3>
-            <p class="step__text" data-i18n="step.3d">Создаю адаптивный сайт и интерактивные элементы.</p>
-          </div>
-        </li>
-        <li class="step" data-reveal>
-          <span class="step__num">04</span>
-          <div class="step__body">
-            <h3 class="step__title" data-i18n="step.4t">Тестирование</h3>
-            <p class="step__text" data-i18n="step.4d">Проверяю версию для телефона, скорость загрузки и работу форм и кнопок.</p>
-          </div>
-        </li>
-        <li class="step" data-reveal>
-          <span class="step__num">05</span>
-          <div class="step__body">
-            <h3 class="step__title" data-i18n="step.5t">Запуск</h3>
-            <p class="step__text" data-i18n="step.5d">Подготавливаю сайт к публикации.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
 
   <!-- ============================================================ WHY -->
   <section class="section why" id="why" aria-labelledby="why-title">
@@ -731,8 +746,8 @@
           <p class="site-footer__label" data-i18n="footer.menu">Меню</p>
           <ul>
             <li><a href="#work" data-i18n="nav.work">Проекты</a></li>
-            <li><a href="#about" data-i18n="nav.about">О себе</a></li>
             <li><a href="#process" data-i18n="nav.process">Процесс</a></li>
+            <li><a href="#about" data-i18n="nav.about">О себе</a></li>
             <li><a href="#contact" data-i18n="nav.contact">Контакты</a></li>
           </ul>
         </div>
@@ -927,5 +942,10 @@
 
 <script src="js/i18n.js" defer></script>
 <script src="js/script.js" defer></script>
+  <div class="quickbar" aria-label="Быстрая связь">
+    <a class="quickbar__btn" href="tel:+79226765715" data-i18n="quick.call">Позвонить</a>
+    <a class="quickbar__btn quickbar__btn--accent" href="https://t.me/magadev_leads_bot?start=site" target="_blank" rel="noopener noreferrer">Telegram</a>
+  </div>
+
 </body>
 </html>

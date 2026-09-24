@@ -139,16 +139,20 @@ window.MagaI18n = (function () {
 
     /* Process */
     'process.title': 'How I build a website',
+    'cta.stripTitle': 'Tell me about your business - I reply within one working day',
+    'cta.stripForm': 'Send a request',
+    'quick.call': 'Call',
+    'process.sub': 'I design it myself. If you have your own designer or a ready layout, I build from it.',
     'step.1t': 'Discussion',
-    'step.1d': 'I get to know the task, the business and the goals of the project.',
+    'step.1d': 'I ask about your business: what you sell, who your clients are, what the site needs.',
     'step.2t': 'Design',
-    'step.2d': 'I work out the structure, the composition and the visual language.',
-    'step.3t': 'Development',
-    'step.3d': 'I build the responsive site and its interactive elements.',
-    'step.4t': 'Testing',
-    'step.4d': 'I check the mobile version, loading speed, and that forms and buttons work.',
+    'step.2d': 'I draw how the site will look and show you the first screen. Got your own layout? I build from it.',
+    'step.3t': 'Build',
+    'step.3d': 'I build the site: texts, photos, request form, call and messenger buttons.',
+    'step.4t': 'Check',
+    'step.4d': 'I check it on phone and desktop: buttons, forms, loading speed.',
     'step.5t': 'Launch',
-    'step.5d': 'I prepare the site for publication.',
+    'step.5d': 'I publish the site, connect the address and the counter so you can see requests.',
 
     /* Why */
     'why.title': 'Built for business.',

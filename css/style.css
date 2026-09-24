@@ -2124,3 +2124,47 @@ p { text-wrap: pretty; }
 @media (max-width: 760px) {
   .worklist { grid-template-columns: 1fr; }
 }
+
+/* ==========================================================================
+   21. CTA-STRIP и QUICKBAR — чтобы связаться было видно, не долистывая до формы
+   ========================================================================== */
+.cta-strip { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+
+.cta-strip__box {
+  display: grid;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.cta-strip__title { font-size: var(--fs-h4); max-width: 34ch; }
+.cta-strip__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+/* Телефон: полоса связи всегда внизу экрана. */
+.quickbar { display: none; }
+
+@media (max-width: 760px) {
+  .quickbar {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 60;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border-top: 1px solid var(--line);
+  }
+
+  .quickbar__btn {
+    padding: 0.9rem 1rem;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.95rem;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .quickbar__btn--accent { color: var(--accent); }
+  body { padding-bottom: 3.25rem; }
+}
